@@ -1,4 +1,4 @@
-CREATE TABLE `data_platform_api_request_to_rmq_mapper`
+CREATE TABLE `data_platform_api_request_to_rabbitmq_queue_mapper`
 (
   `APIServiceName`                     varchar(80) NOT NULL,
   `APIType`                            varchar(20) NOT NULL,
