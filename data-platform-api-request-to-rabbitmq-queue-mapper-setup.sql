@@ -1,371 +1,430 @@
 LOCK TABLES `data_platform_api_request_to_rmq_mapper` WRITE;
 
-INSERT INTO `data_platform_api_request_to_rmq_mapper` (`APIServiceName`, `APIType`, `RepositoryName`, `PortNoInRabbitMQ`, `NameOfQueueFrom`)
+INSERT INTO `data_platform_api_request_to_rmq_mapper` (`APIServiceName`, `ServiceLabel`, `APIType`, `RepositoryName`, `PortNoInRabbitMQ`, `NameOfQueueFrom`)
 VALUES
-('DPFM_API_BUSINESS_PARTNER_SRV', 'READ', 'data-platform-api-business-partner-reads', '30500', 'data-platform-api-business-partner-reads-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'CREATE', 'data-platform-api-business-partner-creates', '30501', 'data-platform-api-business-partner-creates-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'UPDATE', 'data-platform-api-business-partner-updates', '30502', 'data-platform-api-business-partner-updates-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'CREATE', 'data-platform-api-business-partner-pdf-creates', '30503', 'data-platform-api-business-partner-pdf-creates-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'UPDATE', 'data-platform-api-business-partner-pdf-updates', '30504', 'data-platform-api-business-partner-pdf-updates-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'DETELE', 'data-platform-api-business-partner-pdf-deletes', '30505', 'data-platform-api-business-partner-pdf-deletes-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'CANCEL', 'data-platform-api-business-partner-pdf-cancels', '30506', 'data-platform-api-business-partner-pdf-cancels-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'READ', 'data-platform-api-business-partner-pdf-reads', '30507', 'data-platform-api-business-partner-pdf-reads-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV', 'EXCONF', 'data-platform-api-business-partner-exconf', '30508', 'data-platform-api-business-partner-exconf-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'READ', 'data-platform-api-business-partner-reads-customer', '30509', 'data-platform-api-business-partner-reads-customer-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'CREATE', 'data-platform-api-business-partner-creates-customer', '30510', 'data-platform-api-business-partner-creates-customer-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'UPDATE', 'data-platform-api-business-partner-updates-customer', '30511', 'data-platform-api-business-partner-updates-customer-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'EXCONF', 'data-platform-api-business-partner-exconf-customer', '30512', 'data-platform-api-business-partner-exconf-customer-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'READ', 'data-platform-api-business-partner-reads-supplier', '30513', 'data-platform-api-business-partner-reads-supplier-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'CREATE', 'data-platform-api-business-partner-creates-supplier', '30514', 'data-platform-api-business-partner-creates-supplier-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'UPDATE', 'data-platform-api-business-partner-updates-supplier', '30515', 'data-platform-api-business-partner-updates-supplier-queue-from')
-('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'EXCONF', 'data-platform-api-business-partner-exconf-supplier', '30516', 'data-platform-api-business-partner-exconf-supplier-queue-from')
-('DPFM_API_PARTNER_FUNCTION_SRV', 'READ', 'data-platform-api-partner-function-reads', '30517', 'data-platform-api-partner-function-reads-queue-from')
-('DPFM_API_PARTNER_FUNCTION_SRV', 'CREATE', 'data-platform-api-partner-function-creates', '30518', 'data-platform-api-partner-function-creates-queue-from')
-('DPFM_API_PARTNER_FUNCTION_SRV', 'UPDATE', 'data-platform-api-partner-function-updates', '30519', 'data-platform-api-partner-function-updates-queue-from')
-('DPFM_API_PARTNER_FUNCTION_SRV', 'UPDATE', 'data-platform-api-partner-function-deletes', '30520', 'data-platform-api-partner-function-deletes-queue-from')
-('DPFM_API_PARTNER_FUNCTION_SRV', 'EXCONF', 'data-platform-api-partner-function-exconf', '30521', 'data-platform-api-partner-function-exconf-queue-from')
-('DPFM_API_PRICE_MASTER_SRV', 'READ', 'data-platform-api-price-master-reads', '30522', 'data-platform-api-price-master-reads-queue-from')
-('DPFM_API_PRICE_MASTER_SRV', 'CREATE', 'data-platform-api-price-master-creates', '30523', 'data-platform-api-price-master-creates-queue-from')
-('DPFM_API_PRICE_MASTER_SRV', 'UPDATE', 'data-platform-api-price-master-updates', '30524', 'data-platform-api-price-master-updates-queue-from')
-('DPFM_API_PRICE_MASTER_SRV', 'EXCONF', 'data-platform-api-price-master-exconf', '30525', 'data-platform-api-price-master-exconf-queue-from')
-('DPFM_API_FIN_INST_MASTER_SRV', 'READ', 'data-platform-api-fin-inst-master-reads', '30526', 'data-platform-api-fin-inst-master-reads-queue-from')
-('DPFM_API_FIN_INST_MASTER_SRV', 'CREATE', 'data-platform-api-fin-inst-master-creates', '30527', 'data-platform-api-fin-inst-master-creates-queue-from')
-('DPFM_API_FIN_INST_MASTER_SRV', 'UPDATE', 'data-platform-api-fin-inst-master-updates', '30528', 'data-platform-api-fin-inst-master-updates-queue-from')
-('DPFM_API_FIN_INST_MASTER_SRV', 'UPDATE', 'data-platform-api-fin-inst-master-deletes', '30529', 'data-platform-api-fin-inst-master-deletes-queue-from')
-('DPFM_API_FIN_INST_MASTER_SRV', 'EXCONF', 'data-platform-api-bank-master-exconf', '30530', 'data-platform-api-bank-master-exconf-queue-from')
-('DPFM_API_FIN_INST_ACCOUNT_SRV', 'READ', 'data-platform-api-fin-inst-account-reads', '30531', 'data-platform-api-fin-inst-account-reads-queue-from')
-('DPFM_API_FIN_INST_ACCOUNT_SRV', 'CREATE', 'data-platform-api-fin-inst-account-creates', '30532', 'data-platform-api-fin-inst-account-creates-queue-from')
-('DPFM_API_FIN_INST_ACCOUNT_SRV', 'UPDATE', 'data-platform-api-fin-inst-account-updates', '30533', 'data-platform-api-fin-inst-account-updates-queue-from')
-('DPFM_API_FIN_INST_ACCOUNT_SRV', 'UPDATE', 'data-platform-api-fin-inst-account-deletes', '30534', 'data-platform-api-fin-inst-account-deletes-queue-from')
-('DPFM_API_FIN_INST_ACCOUNT_SRV', 'EXCONF', 'data-platform-api-fin-inst-account-exconf', '30535', 'data-platform-api-fin-inst-account-exconf-queue-from')
-('DPFM_API_BUSINESS_USER_SRV', 'READ', 'data-platform-api-business-user-reads', '30536', 'data-platform-api-business-user-reads-queue-from')
-('DPFM_API_BUSINESS_USER_SRV', 'CREATE', 'data-platform-api-business-user-creates', '30537', 'data-platform-api-business-user-creates-queue-from')
-('DPFM_API_BUSINESS_USER_SRV', 'UPDATE', 'data-platform-api-business-user-updates', '30538', 'data-platform-api-business-user-updates-queue-from')
-('DPFM_API_BUSINESS_USER_SRV', 'UPDATE', 'data-platform-api-business-user-deletes', '30539', 'data-platform-api-business-user-deletes-queue-from')
-('DPFM_API_BUSINESS_USER_SRV', 'EXCONF', 'data-platform-api-business-user-exconf', '30540', 'data-platform-api-business-user-exconf-queue-from')
-('DPFM_API_PLANT_SRV', 'READ', 'data-platform-api-plant-reads', '30541', 'data-platform-api-plant-reads-queue-from')
-('DPFM_API_PLANT_SRV', 'CREATE', 'data-platform-api-plant-creates', '30542', 'data-platform-api-plant-creates-queue-from')
-('DPFM_API_PLANT_SRV', 'UPDATE', 'data-platform-api-plant-updates', '30543', 'data-platform-api-plant-updates-queue-from')
-('DPFM_API_PLANT_SRV', 'UPDATE', 'data-platform-api-plant-deletes', '30544', 'data-platform-api-plant-deletes-queue-from')
-('DPFM_API_PLANT_SRV', 'EXCONF', 'data-platform-api-plant-exconf', '30545', 'data-platform-api-plant-exconf-queue-from')
-('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'READ', 'data-platform-api-supply-chain-relationship-reads', '30546', 'data-platform-api-supply-chain-relationship-reads-queue-from')
-('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'CREATE', 'data-platform-api-supply-chain-relationship-creates', '30547', 'data-platform-api-supply-chain-relationship-creates-queue-from')
-('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'UPDATE', 'data-platform-api-supply-chain-relationship-updates', '30548', 'data-platform-api-supply-chain-relationship-updates-queue-from')
-('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'UPDATE', 'data-platform-api-supply-chain-relationship-deletes', '30549', 'data-platform-api-supply-chain-relationship-deletes-queue-from')
-('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'EXCONF', 'data-platform-api-supply-chain-relationship-exconf', '30550', 'data-platform-api-supply-chain-relationship-exconf-queue-from')
-('DPFM_API_BUSINESS_AREA_SRV', 'READ', 'data-platform-api-business-area-reads', '30551', 'data-platform-api-business-area-reads-queue-from')
-('DPFM_API_BUSINESS_AREA_SRV', 'CREATE', 'data-platform-api-business-area-creates', '30552', 'data-platform-api-business-area-creates-queue-from')
-('DPFM_API_BUSINESS_AREA_SRV', 'UPDATE', 'data-platform-api-business-area-updates', '30553', 'data-platform-api-business-area-updates-queue-from')
-('DPFM_API_BUSINESS_AREA_SRV', 'UPDATE', 'data-platform-api-business-area-deletes', '30554', 'data-platform-api-business-area-deletes-queue-from')
-('DPFM_API_BUSINESS_AREA_SRV', 'EXCONF', 'data-platform-api-business-area-exconf', '30555', 'data-platform-api-business-area-exconf-queue-from')
-('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'READ', 'data-platform-api-general-ledger-account-reads', '30556', 'data-platform-api-general-ledger-account-reads-queue-from')
-('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'CREATE', 'data-platform-api-general-ledger-account-creates', '30557', 'data-platform-api-general-ledger-account-creates-queue-from')
-('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'UPDATE', 'data-platform-api-general-ledger-account-updates', '30558', 'data-platform-api-general-ledger-account-updates-queue-from')
-('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'UPDATE', 'data-platform-api-general-ledger-account-deletes', '30559', 'data-platform-api-general-ledger-account-deletes-queue-from')
-('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'EXCONF', 'data-platform-api-general-ledger-account-exconf', '30560', 'data-platform-api-general-ledger-account-exconf-queue-from')
-('DPFM_API_POSTAL_CODE_SRV', 'READ', 'data-platform-api-postal-code-reads', '30561', 'data-platform-api-postal-code-reads-queue-from')
-('DPFM_API_POSTAL_CODE_SRV', 'CREATE', 'data-platform-api-postal-code-creates', '30562', 'data-platform-api-postal-code-creates-queue-from')
-('DPFM_API_POSTAL_CODE_SRV', 'UPDATE', 'data-platform-api-postal-code-updates', '30563', 'data-platform-api-postal-code-updates-queue-from')
-('DPFM_API_POSTAL_CODE_SRV', 'EXCONF', 'data-platform-api-postal-code-exconf', '30564', 'data-platform-api-postal-code-exconf-queue-from')
-('DPFM_API_ADDRESS_SRV', 'READ', 'data-platform-api-address-reads', '30565', 'data-platform-api-address-reads-queue-from')
-('DPFM_API_ADDRESS_SRV', 'CREATE', 'data-platform-api-address-creates', '30566', 'data-platform-api-address-creates-queue-from')
-('DPFM_API_ADDRESS_SRV', 'UPDATE', 'data-platform-api-address-updates', '30567', 'data-platform-api-address-updates-queue-from')
-('DPFM_API_ADDRESS_SRV', 'EXCONF', 'data-platform-api-address-exconf', '30568', 'data-platform-api-address-exconf-queue-from')
-('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'READ', 'data-platform-api-distribution-channel-reads', '30569', 'data-platform-api-distribution-channel-reads-queue-from')
-('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'CREATE', 'data-platform-api-distribution-channel-creates', '30570', 'data-platform-api-distribution-channel-creates-queue-from')
-('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'UPDATE', 'data-platform-api-distribution-channel-updates', '30571', 'data-platform-api-distribution-channel-updates-queue-from')
-('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'EXCONF', 'data-platform-api-distribution-channel-exconf', '30572', 'data-platform-api-distribution-channel-exconf-queue-from')
-('DPFM_API_DIVISION_SRV', 'READ', 'data-platform-api-division-reads', '30573', 'data-platform-api-division-reads-queue-from')
-('DPFM_API_DIVISION_SRV', 'CREATE', 'data-platform-api-division-creates', '30574', 'data-platform-api-division-creates-queue-from')
-('DPFM_API_DIVISION_SRV', 'UPDATE', 'data-platform-api-division-updates', '30575', 'data-platform-api-division-updates-queue-from')
-('DPFM_API_DIVISION_SRV', 'EXCONF', 'data-platform-api-division-exconf', '30576', 'data-platform-api-division-exconf-queue-from')
-('DPFM_API_INDUSTRY_SRV', 'READ', 'data-platform-api-industry-reads', '30577', 'data-platform-api-industry-reads-queue-from')
-('DPFM_API_INDUSTRY_SRV', 'CREATE', 'data-platform-api-industry-creates', '30578', 'data-platform-api-industry-creates-queue-from')
-('DPFM_API_INDUSTRY_SRV', 'UPDATE', 'data-platform-api-industry-updates', '30579', 'data-platform-api-industry-updates-queue-from')
-('DPFM_API_INDUSTRY_SRV', 'EXCONF', 'data-platform-api-industry-exconf', '30580', 'data-platform-api-industry-exconf-queue-from')
-('DPFM_API_COUNTRY_SRV', 'READ', 'data-platform-api-country-reads', '30581', 'data-platform-api-country-reads-queue-from')
-('DPFM_API_COUNTRY_SRV', 'CREATE', 'data-platform-api-country-creates', '30582', 'data-platform-api-country-creates-queue-from')
-('DPFM_API_COUNTRY_SRV', 'UPDATE', 'data-platform-api-country-updates', '30583', 'data-platform-api-country-updates-queue-from')
-('DPFM_API_COUNTRY_SRV', 'EXCONF', 'data-platform-api-country-exconf', '30584', 'data-platform-api-country-exconf-queue-from')
-('DPFM_API_LOCAL_REGION_SRV', 'READ', 'data-platform-api-local-region-reads', '30585', 'data-platform-api-local-region-reads-queue-from')
-('DPFM_API_LOCAL_REGION_SRV', 'CREATE', 'data-platform-api-local-region-creates', '30586', 'data-platform-api-local-region-creates-queue-from')
-('DPFM_API_LOCAL_REGION_SRV', 'UPDATE', 'data-platform-api-local-region-updates', '30587', 'data-platform-api-local-region-updates-queue-from')
-('DPFM_API_LOCAL_REGION_SRV', 'EXCONF', 'data-platform-api-local-region-exconf', '30588', 'data-platform-api-local-region-exconf-queue-from')
-('DPFM_API_GLOBAL_REGION_SRV', 'READ', 'data-platform-api-global-region-reads', '30589', 'data-platform-api-global-region-reads-queue-from')
-('DPFM_API_GLOBAL_REGION_SRV', 'CREATE', 'data-platform-api-global-region-creates', '30590', 'data-platform-api-global-region-creates-queue-from')
-('DPFM_API_GLOBAL_REGION_SRV', 'UPDATE', 'data-platform-api-global-region-updates', '30591', 'data-platform-api-global-region-updates-queue-from')
-('DPFM_API_GLOBAL_REGION_SRV', 'EXCONF', 'data-platform-api-global-region-exconf', '30592', 'data-platform-api-global-region-exconf-queue-from')
-('DPFM_API_CURRENCY_SRV', 'READ', 'data-platform-api-currency-reads', '30593', 'data-platform-api-currency-reads-queue-from')
-('DPFM_API_CURRENCY_SRV', 'CREATE', 'data-platform-api-currency-creates', '30594', 'data-platform-api-currency-creates-queue-from')
-('DPFM_API_CURRENCY_SRV', 'UPDATE', 'data-platform-api-currency-updates', '30595', 'data-platform-api-currency-updates-queue-from')
-('DPFM_API_CURRENCY_SRV', 'EXCONF', 'data-platform-api-currency-exconf', '30596', 'data-platform-api-currency-exconf-queue-from')
-('DPFM_API_LANGUAGE_SRV', 'READ', 'data-platform-api-language-reads', '30597', 'data-platform-api-language-reads-queue-from')
-('DPFM_API_LANGUAGE_SRV', 'CREATE', 'data-platform-api-language-creates', '30598', 'data-platform-api-language-creates-queue-from')
-('DPFM_API_LANGUAGE_SRV', 'UPDATE', 'data-platform-api-language-updates', '30599', 'data-platform-api-language-updates-queue-from')
-('DPFM_API_LANGUAGE_SRV', 'EXCONF', 'data-platform-api-language-exconf', '30600', 'data-platform-api-language-exconf-queue-from')
-('DPFM_API_TIME_ZONE_SRV', 'READ', 'data-platform-api-time-zone-reads', '30601', 'data-platform-api-time-zone-reads-queue-from')
-('DPFM_API_TIME_ZONE_SRV', 'CREATE', 'data-platform-api-time-zone-creates', '30602', 'data-platform-api-time-zone-creates-queue-from')
-('DPFM_API_TIME_ZONE_SRV', 'UPDATE', 'data-platform-api-time-zone-updates', '30603', 'data-platform-api-time-zone-updates-queue-from')
-('DPFM_API_TIME_ZONE_SRV', 'EXCONF', 'data-platform-api-time-zone-exconf', '30604', 'data-platform-api-time-zone-exconf-queue-from')
-('DPFM_API_NUMBER_RANGE_SRV', 'READ', 'data-platform-api-number-range-reads', '30605', 'data-platform-api-number-range-reads-queue-from')
-('DPFM_API_NUMBER_RANGE_SRV', 'CREATE', 'data-platform-api-number-range-creates', '30606', 'data-platform-api-number-range-creates-queue-from')
-('DPFM_API_NUMBER_RANGE_SRV', 'UPDATE', 'data-platform-api-number-range-updates', '30607', 'data-platform-api-number-range-updates-queue-from')
-('DPFM_API_NUMBER_RANGE_SRV', 'EXCONF', 'data-platform-api-number-range-exconf', '30608', 'data-platform-api-number-range-exconf-queue-from')
-('DPFM_BPGROUP_1_SRV', 'READ', 'data-platform-api-bpgroup-1-reads', '30609', 'data-platform-api-bpgroup-1-reads-queue-from')
-('DPFM_BPGROUP_1_SRV', 'CREATE', 'data-platform-api-bpgroup-1-creates', '30610', 'data-platform-api-bpgroup-1-creates-queue-from')
-('DPFM_BPGROUP_1_SRV', 'UPDATE', 'data-platform-api-bpgroup-1-updates', '30611', 'data-platform-api-bpgroup-1-updates-queue-from')
-('DPFM_BPGROUP_1_SRV', 'EXCONF', 'data-platform-api-bpgroup-1-exconf', '30612', 'data-platform-api-bpgroup-1-exconf-queue-from')
-('DPFM_BPGROUP_2_SRV', 'READ', 'data-platform-api-bpgroup-2-reads', '30613', 'data-platform-api-bpgroup-2-reads-queue-from')
-('DPFM_BPGROUP_2_SRV', 'CREATE', 'data-platform-api-bpgroup-2-creates', '30614', 'data-platform-api-bpgroup-2-creates-queue-from')
-('DPFM_BPGROUP_2_SRV', 'UPDATE', 'data-platform-api-bpgroup-2-updates', '30615', 'data-platform-api-bpgroup-2-updates-queue-from')
-('DPFM_BPGROUP_2_SRV', 'EXCONF', 'data-platform-api-bpgroup-2-exconf', '30616', 'data-platform-api-bpgroup-2-exconf-queue-from')
-('DPFM_BPGROUP_3_SRV', 'READ', 'data-platform-api-bpgroup-3-reads', '30617', 'data-platform-api-bpgroup-3-reads-queue-from')
-('DPFM_BPGROUP_3_SRV', 'CREATE', 'data-platform-api-bpgroup-3-creates', '30618', 'data-platform-api-bpgroup-3-creates-queue-from')
-('DPFM_BPGROUP_3_SRV', 'UPDATE', 'data-platform-api-bpgroup-3-updates', '30619', 'data-platform-api-bpgroup-3-updates-queue-from')
-('DPFM_BPGROUP_3_SRV', 'EXCONF', 'data-platform-api-bpgroup-3-exconf', '30620', 'data-platform-api-bpgroup-3-exconf-queue-from')
-('DPFM_BPGROUP_4_SRV', 'READ', 'data-platform-api-bpgroup-4-reads', '30621', 'data-platform-api-bpgroup-4-reads-queue-from')
-('DPFM_BPGROUP_4_SRV', 'CREATE', 'data-platform-api-bpgroup-4-creates', '30622', 'data-platform-api-bpgroup-4-creates-queue-from')
-('DPFM_BPGROUP_4_SRV', 'UPDATE', 'data-platform-api-bpgroup-4-updates', '30623', 'data-platform-api-bpgroup-4-updates-queue-from')
-('DPFM_BPGROUP_4_SRV', 'EXCONF', 'data-platform-api-bpgroup-4-exconf', '30624', 'data-platform-api-bpgroup-4-exconf-queue-from')
-('DPFM_BPGROUP_5_SRV', 'READ', 'data-platform-api-bpgroup-5-reads', '30625', 'data-platform-api-bpgroup-5-reads-queue-from')
-('DPFM_BPGROUP_5_SRV', 'CREATE', 'data-platform-api-bpgroup-5-creates', '30626', 'data-platform-api-bpgroup-5-creates-queue-from')
-('DPFM_BPGROUP_5_SRV', 'UPDATE', 'data-platform-api-bpgroup-5-updates', '30627', 'data-platform-api-bpgroup-5-updates-queue-from')
-('DPFM_BPGROUP_5_SRV', 'EXCONF', 'data-platform-api-bpgroup-5-exconf', '30628', 'data-platform-api-bpgroup-5-exconf-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'READ', 'data-platform-api-product-master-reads', '30629', 'data-platform-api-product-master-reads-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'CREATE', 'data-platform-api-product-master-creates', '30630', 'data-platform-api-product-master-creates-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'UPDATE', 'data-platform-api-product-master-updates', '30631', 'data-platform-api-product-master-updates-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'CREATE', 'data-platform-api-product-master-pdf-creates', '30632', 'data-platform-api-product-master-pdf-creates-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'UPDATE', 'data-platform-api-product-master-pdf-updates', '30633', 'data-platform-api-product-master-pdf-updates-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'DETELE', 'data-platform-api-product-master-pdf-deletes', '30634', 'data-platform-api-product-master-pdf-deletes-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'CANCEL', 'data-platform-api-product-master-pdf-cancels', '30635', 'data-platform-api-product-master-pdf-cancels-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'READ', 'data-platform-api-product-master-pdf-reads', '30636', 'data-platform-api-product-master-pdf-reads-queue-from')
-('DPFM_API_PRODUCT_MASTER_SRV', 'EXCONF', 'data-platform-api-product-master-exconf', '30637', 'data-platform-api-product-master-exconf-queue-from')
-('DPFM_API_PRODUCT_TYPE_SRV', 'READ', 'data-platform-api-product-type-reads', '30638', 'data-platform-api-product-type-reads-queue-from')
-('DPFM_API_PRODUCT_TYPE_SRV', 'CREATE', 'data-platform-api-product-type-creates', '30639', 'data-platform-api-product-type-creates-queue-from')
-('DPFM_API_PRODUCT_TYPE_SRV', 'UPDATE', 'data-platform-api-product-type-updates', '30640', 'data-platform-api-product-type-updates-queue-from')
-('DPFM_API_PRODUCT_TYPE_SRV', 'EXCONF', 'data-platform-api-product-type-exconf', '30641', 'data-platform-api-product-type-exconf-queue-from')
-('DPFM_API_PRODUCT_GROUP_SRV', 'READ', 'data-platform-api-product-group-reads', '30642', 'data-platform-api-product-group-reads-queue-from')
-('DPFM_API_PRODUCT_GROUP_SRV', 'CREATE', 'data-platform-api-product-group-creates', '30643', 'data-platform-api-product-group-creates-queue-from')
-('DPFM_API_PRODUCT_GROUP_SRV', 'UPDATE', 'data-platform-api-product-group-updates', '30644', 'data-platform-api-product-group-updates-queue-from')
-('DPFM_API_PRODUCT_GROUP_SRV', 'EXCONF', 'data-platform-api-product-group-exconf', '30645', 'data-platform-api-product-group-exconf-queue-from')
-('DPFM_API_QUANTITY_UNIT_SRV', 'READ', 'data-platform-api-quantity-unit-reads', '30646', 'data-platform-api-quantity-unit-reads-queue-from')
-('DPFM_API_QUANTITY_UNIT_SRV', 'CREATE', 'data-platform-api-quantity-unit-creates', '30647', 'data-platform-api-quantity-unit-creates-queue-from')
-('DPFM_API_QUANTITY_UNIT_SRV', 'UPDATE', 'data-platform-api-quantity-unit-updates', '30648', 'data-platform-api-quantity-unit-updates-queue-from')
-('DPFM_API_QUANTITY_UNIT_SRV', 'EXCONF', 'data-platform-api-quantity-unit-exconf', '30649', 'data-platform-api-quantity-unit-exconf-queue-from')
-('DPFM_API_PRODUCT_STOCK_SRV', 'READ', 'data-platform-api-product-stock-reads', '30650', 'data-platform-api-product-stock-reads-queue-from')
-('DPFM_API_PRODUCT_STOCK_SRV', 'CREATE', 'data-platform-api-product-stock-creates', '30651', 'data-platform-api-product-stock-creates-queue-from')
-('DPFM_API_PRODUCT_STOCK_SRV', 'UPDATE', 'data-platform-api-product-stock-updates', '30652', 'data-platform-api-product-stock-updates-queue-from')
-('DPFM_API_PRODUCT_STOCK_SRV', 'EXCONF', 'data-platform-api-product-stock-exconf', '30653', 'data-platform-api-product-stock-exconf-queue-from')
-('DPFM_API_RESERVATION_DOCUMENT _SRV', 'READ', 'data_platform_api_reservation_document_reads', '30654', 'data_platform_api_reservation_document_reads-queue-from')
-('DPFM_API_RESERVATION_DOCUMENT _SRV', 'CREATE', 'data_platform_api_reservation_document_creates', '30655', 'data_platform_api_reservation_document_creates-queue-from')
-('DPFM_API_RESERVATION_DOCUMENT _SRV', 'UPDATE', 'data_platform_api_reservation_document_updates', '30656', 'data_platform_api_reservation_document_updates-queue-from')
-('DPFM_API_RESERVATION_DOCUMENT _SRV', 'EXCONF', 'data_platform_api_reservation_document_exconf', '30657', 'data_platform_api_reservation_document_exconf-queue-from')
-('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'READ', 'data-platform-api-goods-movement-document-reads', '30658', 'data-platform-api-goods-movement-document-reads-queue-from')
-('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'CREATE', 'data-platform-api-goods-movement-document-creates', '30659', 'data-platform-api-goods-movement-document-creates-queue-from')
-('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'UPDATE', 'data-platform-api-goods-movement-document-updates', '30660', 'data-platform-api-goods-movement-document-updates-queue-from')
-('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'EXCONF', 'data-platform-api-goods-movement-document-exconf', '30661', 'data-platform-api-goods-movement-document-exconf-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'READ', 'data-platform-api-bill-of-material-reads', '30662', 'data-platform-api-bill-of-material-reads-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'CREATE', 'data-platform-api-bill-of-material-creates', '30663', 'data-platform-api-bill-of-material-creates-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'UPDATE', 'data-platform-api-bill-of-material-updates', '30664', 'data-platform-api-bill-of-material-updates-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'CREATE', 'data-platform-api-bill-of-material-pdf-creates', '30665', 'data-platform-api-bill-of-material-pdf-creates-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'UPDATE', 'data-platform-api-bill-of-material-pdf-updates', '30666', 'data-platform-api-bill-of-material-pdf-updates-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'DETELE', 'data-platform-api-bill-of-material-pdf-deletes', '30667', 'data-platform-api-bill-of-material-pdf-deletes-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'CANCEL', 'data-platform-api-bill-of-material-pdf-cancels', '30668', 'data-platform-api-bill-of-material-pdf-cancels-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'READ', 'data-platform-api-bill-of-material-pdf-reads', '30669', 'data-platform-api-bill-of-material-pdf-reads-queue-from')
-('DPFM_API_BILL_OF_MATERIAL_SRV', 'EXCONF', 'data-platform-api-bill-of-material-exconf', '30670', 'data-platform-api-bill-of-material-exconf-queue-from')
-('DPFM_API_BOM_WHERE_USED_SRV', 'READ', 'data-platform-api-bill-of-material-where-used-list-reads', '30671', 'data-platform-api-bill-of-material-where-used-list-reads-queue-from')
-('DPFM_API_BOM_WHERE_USED_SRV', 'CREATE', 'data-platform-api-bill-of-material-where-used-list-creates', '30672', 'data-platform-api-bill-of-material-where-used-list-creates-queue-from')
-('DPFM_API_BOM_WHERE_USED_SRV', 'UPDATE', 'data-platform-api-bill-of-material-where-used-list-updates', '30673', 'data-platform-api-bill-of-material-where-used-list-updates-queue-from')
-('DPFM_API_BOM_WHERE_USED_SRV', 'CREATE', 'data-platform-api-bill-of-material-where-used-list-pdf-creates', '30674', 'data-platform-api-bill-of-material-where-used-list-pdf-creates-queue-from')
-('DPFM_API_BOM_WHERE_USED_SRV', 'UPDATE', 'data-platform-api-bill-of-material-where-used-list-pdf-updates', '30675', 'data-platform-api-bill-of-material-where-used-list-pdf-updates-queue-from')
-('DPFM_API_BOM_WHERE_USED_SRV', 'DETELE', 'data-platform-api-bill-of-material-where-used-list-pdf-deletes', '30676', 'data-platform-api-bill-of-material-where-used-list-pdf-deletes-queue-from')
-('DPFM_API_BOM_WHERE_USED_SRV', 'READ', 'data-platform-api-bill-of-material-where-used-list-pdf-reads', '30677', 'data-platform-api-bill-of-material-where-used-list-pdf-reads-queue-from')
-('DPFM_API_WORK_CENTER', 'READ', 'data-platform-api-work-center-reads', '30678', 'data-platform-api-work-center-reads-queue-from')
-('DPFM_API_WORK_CENTER', 'CREATE', 'data-platform-api-work-center-creates', '30679', 'data-platform-api-work-center-creates-queue-from')
-('DPFM_API_WORK_CENTER', 'UPDATE', 'data-platform-api-work-center-updates', '30680', 'data-platform-api-work-center-updates-queue-from')
-('DPFM_API_WORK_CENTER', 'EXCONF', 'data-platform-api-work-center-exconf', '30681', 'data-platform-api-work-center-exconf-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'READ', 'data-platform-api-production-routing-reads', '30682', 'data-platform-api-production-routing-reads-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'CREATE', 'data-platform-api-production-routing-creates', '30683', 'data-platform-api-production-routing-creates-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'UPDATE', 'data-platform-api-production-routing-updates', '30684', 'data-platform-api-production-routing-updates-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'CREATE', 'data-platform-api-production-routing-pdf-creates', '30685', 'data-platform-api-production-routing-pdf-creates-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'UPDATE', 'data-platform-api-production-routing-pdf-updates', '30686', 'data-platform-api-production-routing-pdf-updates-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'DETELE', 'data-platform-api-production-routing-pdf-deletes', '30687', 'data-platform-api-production-routing-pdf-deletes-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'CANCEL', 'data-platform-api-production-routing-pdf-cancels', '30688', 'data-platform-api-production-routing-pdf-cancels-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'READ', 'data-platform-api-production-routing-pdf-reads', '30689', 'data-platform-api-production-routing-pdf-reads-queue-from')
-('DPFM_API_PRODUCTION_ROUTING', 'EXCONF', 'data-platform-api-production-routing-exconf', '30690', 'data-platform-api-production-routing-exconf-queue-from')
-('DPFM_API_MASTER_RECIPE', 'READ', 'data-platform-api-master-recipe-reads', '30691', 'data-platform-api-master-recipe-reads-queue-from')
-('DPFM_API_MASTER_RECIPE', 'CREATE', 'data-platform-api-master-recipe-creates', '30692', 'data-platform-api-master-recipe-creates-queue-from')
-('DPFM_API_MASTER_RECIPE', 'UPDATE', 'data-platform-api-master-recipe-updates', '30693', 'data-platform-api-master-recipe-updates-queue-from')
-('DPFM_API_MASTER_RECIPE', 'CREATE', 'data-platform-api-master-recipe-pdf-creates', '30694', 'data-platform-api-master-recipe-pdf-creates-queue-from')
-('DPFM_API_MASTER_RECIPE', 'UPDATE', 'data-platform-api-master-recipe-pdf-updates', '30695', 'data-platform-api-master-recipe-pdf-updates-queue-from')
-('DPFM_API_MASTER_RECIPE', 'DETELE', 'data-platform-api-master-recipe-pdf-deletes', '30696', 'data-platform-api-master-recipe-pdf-deletes-queue-from')
-('DPFM_API_MASTER_RECIPE', 'CANCEL', 'data-platform-api-master-recipe-pdf-cancels', '30697', 'data-platform-api-master-recipe-pdf-cancels-queue-from')
-('DPFM_API_MASTER_RECIPE', 'READ', 'data-platform-api-master-recipe-pdf-reads', '30698', 'data-platform-api-master-recipe-pdf-reads-queue-from')
-('DPFM_API_MASTER_RECIPE', 'EXCONF', 'data-platform-api-master-recipe-exconf', '30699', 'data-platform-api-master-recipe-exconf-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'READ', 'data-platform-api-quotations-reads', '30700', 'data-platform-api-quotations-reads-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'CREATE', 'data-platform-api-quotations-creates', '30701', 'data-platform-api-quotations-creates-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'UPDATE', 'data-platform-api-quotations-updates', '30702', 'data-platform-api-quotations-updates-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'CREATE', 'data-platform-api-quotations-pdf-creates', '30703', 'data-platform-api-quotations-pdf-creates-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'UPDATE', 'data-platform-api-quotations-pdf-updates', '30704', 'data-platform-api-quotations-pdf-updates-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'DETELE', 'data-platform-api-quotations-pdf-deletes', '30705', 'data-platform-api-quotations-pdf-deletes-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'CANCEL', 'data-platform-api-quotations-pdf-cancels', '30706', 'data-platform-api-quotations-pdf-cancels-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'READ', 'data-platform-api-quotations-pdf-reads', '30707', 'data-platform-api-quotations-pdf-reads-queue-from')
-('DPFM_API_QUOTATIONS_SRV', 'EXCONF', 'data-platform-api-quotations-exconf', '30708', 'data-platform-api-quotations-exconf-queue-from')
-('DPFM_API_ORDERS_SRV', 'READ', 'data-platform-api-orders-reads', '30709', 'data-platform-api-orders-reads-queue-from')
-('DPFM_API_ORDERS_SRV', 'CREATE', 'data-platform-api-orders-creates', '30710', 'data-platform-api-orders-creates-queue-from')
-('DPFM_API_ORDERS_SRV', 'UPDATE', 'data-platform-api-orders-updates', '30711', 'data-platform-api-orders-updates-queue-from')
-('DPFM_API_ORDERS_SRV', 'CREATE', 'data-platform-api-orders-creates-pdf', '30712', 'data-platform-api-orders-creates-pdf-queue-from')
-('DPFM_API_ORDERS_SRV', 'UPDATE', 'data-platform-api-orders-updates-pdf', '30713', 'data-platform-api-orders-updates-pdf-queue-from')
-('DPFM_API_ORDERS_SRV', 'DETELE', 'data-platform-api-orders-deletes-pdf', '30714', 'data-platform-api-orders-deletes-pdf-queue-from')
-('DPFM_API_ORDERS_SRV', 'CANCEL', 'data-platform-api-orders-pdf-cancels', '30715', 'data-platform-api-orders-pdf-cancels-queue-from')
-('DPFM_API_ORDERS_SRV', 'READ', 'data-platform-api-orders-pdf-reads', '30716', 'data-platform-api-orders-pdf-reads-queue-from')
-('DPFM_API_ORDERS_SRV', 'EXCONF', 'data-platform-api-orders-exconf', '30717', 'data-platform-api-orders-exconf-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'READ', 'data-platform-api-delivery-document-reads', '30718', 'data-platform-api-delivery-document-reads-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'CREATE', 'data-platform-api-delivery-document-creates', '30719', 'data-platform-api-delivery-document-creates-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'UPDATE', 'data-platform-api-delivery-document-updates', '30720', 'data-platform-api-delivery-document-updates-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'CREATE', 'data-platform-api-delivery-document-pdf-creates', '30721', 'data-platform-api-delivery-document-pdf-creates-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'UPDATE', 'data-platform-api-delivery-document-pdf-updates', '30722', 'data-platform-api-delivery-document-pdf-updates-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DETELE', 'data-platform-api-delivery-document-pdf-deletes', '30723', 'data-platform-api-delivery-document-pdf-deletes-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'CANCEL', 'data-platform-api-delivery-document-pdf-cancels', '30724', 'data-platform-api-delivery-document-pdf-cancels-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'READ', 'data-platform-api-delivery-document-pdf-reads', '30725', 'data-platform-api-delivery-document-pdf-reads-queue-from')
-('DPFM_API_DELIVERY_DOCUMENT_SRV', 'EXCONF', 'data-platform-api-delivery-document-exconf', '30726', 'data-platform-api-delivery-document-exconf-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'READ', 'data-platform-api-invoice-document-reads', '30727', 'data-platform-api-invoice-document-reads-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'CREATE', 'data-platform-api-invoice-document-creates', '30728', 'data-platform-api-invoice-document-creates-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'UPDATE', 'data-platform-api-invoice-document-updates', '30729', 'data-platform-api-invoice-document-updates-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'CREATE', 'data-platform-api-invoice-document-pdf-creates', '30730', 'data-platform-api-invoice-document-pdf-creates-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'UPDATE', 'data-platform-api-invoice-document-pdf-updates', '30731', 'data-platform-api-invoice-document-pdf-updates-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'DETELE', 'data-platform-api-invoice-document-pdf-deletes', '30732', 'data-platform-api-invoice-document-pdf-deletes-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'CANCEL', 'data-platform-api-invoice-document-pdf-cancels', '30733', 'data-platform-api-invoice-document-pdf-cancels-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'READ', 'data-platform-api-invoice-document-pdf-reads', '30734', 'data-platform-api-invoice-document-pdf-reads-queue-from')
-('DPFM_API_INVOICE_DOCUMENT_SRV', 'EXCONF', 'data-platform-api-invoice-document-exconf', '30735', 'data-platform-api-invoice-document-exconf-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'READ', 'data-platform-api-customer-product-reads', '30736', 'data-platform-api-customer-product-reads-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CREATE', 'data-platform-api-customer-product-creates', '30737', 'data-platform-api-customer-product-creates-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'UPDATE', 'data-platform-api-customer-product-updates', '30738', 'data-platform-api-customer-product-updates-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CREATE', 'data-platform-api-customer-product-pdf-creates', '30739', 'data-platform-api-customer-product-pdf-creates-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'UPDATE', 'data-platform-api-customer-product-pdf-updates', '30740', 'data-platform-api-customer-product-pdf-updates-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'DETELE', 'data-platform-api-customer-product-pdf-deletes', '30741', 'data-platform-api-customer-product-pdf-deletes-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CANCEL', 'data-platform-api-customer-product-pdf-cancels', '30742', 'data-platform-api-customer-product-pdf-cancels-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'READ', 'data-platform-api-customer-product-pdf-reads', '30743', 'data-platform-api-customer-product-pdf-reads-queue-from')
-('DPFM_API_CUSTOMER_PRODUCT_SRV', 'EXCONF', 'data-platform-api-customer-product-exconf', '30744', 'data-platform-api-customer-product-exconf-queue-from')
-('DPFM_INCOTERMS_SRV', 'READ', 'data-platform-api-incoterms-reads', '30745', 'data-platform-api-incoterms-reads-queue-from')
-('DPFM_INCOTERMS_SRV', 'CREATE', 'data-platform-api-incoterms-creates', '30746', 'data-platform-api-incoterms-creates-queue-from')
-('DPFM_INCOTERMS_SRV', 'UPDATE', 'data-platform-api-incoterms-updates', '30747', 'data-platform-api-incoterms-updates-queue-from')
-('DPFM_INCOTERMS_SRV', 'EXCONF', 'data-platform-api-incoterms-exconf', '30748', 'data-platform-api-incoterms-exconf-queue-from')
-('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'READ', 'data-platform-api-purchasing-info-record-reads', '30749', 'data-platform-api-purchasing-info-record-reads-queue-from')
-('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'CREATE', 'data-platform-api-purchasing-info-record-creates', '30750', 'data-platform-api-purchasing-info-record-creates-queue-from')
-('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'UPDATE', 'data-platform-api-purchasing-info-record-updates', '30751', 'data-platform-api-purchasing-info-record-updates-queue-from')
-('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'EXCONF', 'data-platform-api-purchasing-info-record-exconf', '30752', 'data-platform-api-purchasing-info-record-exconf-queue-from')
-('DPFM_API_PURCHASE_REQUISITION_SRV', 'READ', 'data-platform-api-purchase-requisition-reads', '30753', 'data-platform-api-purchase-requisition-reads-queue-from')
-('DPFM_API_PURCHASE_REQUISITION_SRV', 'CREATE', 'data-platform-api-purchase-requisition-creates', '30754', 'data-platform-api-purchase-requisition-creates-queue-from')
-('DPFM_API_PURCHASE_REQUISITION_SRV', 'UPDATE', 'data-platform-api-purchase-requisition-updates', '30755', 'data-platform-api-purchase-requisition-updates-queue-from')
-('DPFM_API_PURCHASE_REQUISITION_SRV', 'EXCONF', 'data-platform-api-purchase-requisition-exconf', '30756', 'data-platform-api-purchase-requisition-exconf-queue-from')
-('DPFM_API_HOUSE_BANK_SRV', 'READ', 'data-platform-api-house-bank-reads', '30757', 'data-platform-api-house-bank-reads-queue-from')
-('DPFM_API_HOUSE_BANK_SRV', 'CREATE', 'data-platform-api-house-bank-creates', '30758', 'data-platform-api-house-bank-creates-queue-from')
-('DPFM_API_HOUSE_BANK_SRV', 'UPDATE', 'data-platform-api-house-bank-updates', '30759', 'data-platform-api-house-bank-updates-queue-from')
-('DPFM_API_HOUSE_BANK_SRV', 'EXCONF', 'data-platform-api-house-bank-exconf', '30760', 'data-platform-api-house-bank-exconf-queue-from')
-('DPFM_API_PAYMENT_METHOD_SRV', 'READ', 'data-platform-api-payment-method-reads', '30761', 'data-platform-api-payment-method-reads-queue-from')
-('DPFM_API_PAYMENT_METHOD_SRV', 'CREATE', 'data-platform-api-payment-method-creates', '30762', 'data-platform-api-payment-method-creates-queue-from')
-('DPFM_API_PAYMENT_METHOD_SRV', 'UPDATE', 'data-platform-api-payment-method-updates', '30763', 'data-platform-api-payment-method-updates-queue-from')
-('DPFM_API_PAYMENT_METHOD_SRV', 'EXCONF', 'data-platform-api-payment-method-exconf', '30764', 'data-platform-api-payment-method-exconf-queue-from')
-('DPFM_API_PAYMENT_TERM_SRV', 'READ', 'data-platform-api-sales-district-reads', '30765', 'data-platform-api-sales-district-reads-queue-from')
-('DPFM_API_PAYMENT_TERM_SRV', 'CREATE', 'data-platform-api-sales-district-creates', '30766', 'data-platform-api-sales-district-creates-queue-from')
-('DPFM_API_PAYMENT_TERM_SRV', 'UPDATE', 'data-platform-api-sales-district-updates', '30767', 'data-platform-api-sales-district-updates-queue-from')
-('DPFM_API_PAYMENT_TERM_SRV', 'EXCONF', 'data-platform-api-sales-district-exconf', '30768', 'data-platform-api-sales-district-exconf-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'READ', 'data-platform-api-payment-requisition-reads', '30769', 'data-platform-api-payment-requisition-reads-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'CREATE', 'data-platform-api-payment-requisition-creates', '30770', 'data-platform-api-payment-requisition-creates-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'UPDATE', 'data-platform-api-payment-requisition-updates', '30771', 'data-platform-api-payment-requisition-updates-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'CREATE', 'data-platform-api-payment-requisition-pdf-creates', '30772', 'data-platform-api-payment-requisition-pdf-creates-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'UPDATE', 'data-platform-api-payment-requisition-pdf-updates', '30773', 'data-platform-api-payment-requisition-pdf-updates-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'DETELE', 'data-platform-api-payment-requisition-pdf-deletes', '30774', 'data-platform-api-payment-requisition-pdf-deletes-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'CANCEL', 'data-platform-api-payment-requisition-pdf-cancels', '30775', 'data-platform-api-payment-requisition-pdf-cancels-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'READ', 'data-platform-api-payment-requisition-pdf-reads', '30776', 'data-platform-api-payment-requisition-pdf-reads-queue-from')
-('DPFM_API_PAYMENT_REQUISITION_SRV', 'EXCONF', 'data-platform-api-payment-requisition-exconf', '30777', 'data-platform-api-payment-requisition-exconf-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'READ', 'data-platform-api-bank-statement-reads', '30778', 'data-platform-api-bank-statement-reads-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'CREATE', 'data-platform-api-bank-statement-creates', '30779', 'data-platform-api-bank-statement-creates-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'UPDATE', 'data-platform-api-bank-statement-updates', '30780', 'data-platform-api-bank-statement-updates-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'CREATE', 'data-platform-api-bank-statement-pdf-creates', '30781', 'data-platform-api-bank-statement-pdf-creates-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'UPDATE', 'data-platform-api-bank-statement-pdf-updates', '30782', 'data-platform-api-bank-statement-pdf-updates-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'DETELE', 'data-platform-api-bank-statement-pdf-deletes', '30783', 'data-platform-api-bank-statement-pdf-deletes-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'CANCEL', 'data-platform-api-bank-statement-pdf-cancels', '30784', 'data-platform-api-bank-statement-pdf-cancels-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'READ', 'data-platform-api-bank-statement-pdf-reads', '30785', 'data-platform-api-bank-statement-pdf-reads-queue-from')
-('DPFM_API_BANK_STATEMENT_SRV', 'EXCONF', 'data-platform-api-bank-statement-exconf', '30786', 'data-platform-api-bank-statement-exconf-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'READ', 'data-platform-api-accounting-document-reads', '30787', 'data-platform-api-accounting-document-reads-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'CREATE', 'data-platform-api-accounting-document-creates', '30788', 'data-platform-api-accounting-document-creates-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'UPDATE', 'data-platform-api-accounting-document-updates', '30789', 'data-platform-api-accounting-document-updates-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'CREATE', 'data-platform-api-accounting-document-pdf-creates', '30790', 'data-platform-api-accounting-document-pdf-creates-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'UPDATE', 'data-platform-api-accounting-document-pdf-updates', '30791', 'data-platform-api-accounting-document-pdf-updates-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'DETELE', 'data-platform-api-accounting-document-pdf-deletes', '30792', 'data-platform-api-accounting-document-pdf-deletes-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'CANCEL', 'data-platform-api-accounting-document-pdf-cancels', '30793', 'data-platform-api-accounting-document-pdf-cancels-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'READ', 'data-platform-api-accounting-document-pdf-reads', '30794', 'data-platform-api-accounting-document-pdf-reads-queue-from')
-('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'EXCONF', 'data-platform-api-accounting-document-exconf', '30795', 'data-platform-api-accounting-document-exconf-queue-from')
-('DPFM_API_AR_BALANCE_SRV', 'READ', 'data-platform-api-ar-balance-reads', '30796', 'data-platform-api-ar-balance-reads-queue-from')
-('DPFM_API_AR_BALANCE_SRV', 'CREATE', 'data-platform-api-ar-balance-creates', '30797', 'data-platform-api-ar-balance-creates-queue-from')
-('DPFM_API_AR_BALANCE_SRV', 'UPDATE', 'data-platform-api-ar-balance-updates', '30798', 'data-platform-api-ar-balance-updates-queue-from')
-('DPFM_API_AR_BALANCE_SRV', 'CREATE', 'data-platform-api-ar-balance-pdf-creates', '30799', 'data-platform-api-ar-balance-pdf-creates-queue-from')
-('DPFM_API_AR_BALANCE_SRV', 'UPDATE', 'data-platform-api-ar-balance-pdf-updates', '30800', 'data-platform-api-ar-balance-pdf-updates-queue-from')
-('DPFM_API_AR_BALANCE_SRV', 'DETELE', 'data-platform-api-ar-balance-pdf-deletes', '30801', 'data-platform-api-ar-balance-pdf-deletes-queue-from')
-('DPFM_API_AR_BALANCE_SRV', 'READ', 'data-platform-api-ar-balance-pdf-reads', '30802', 'data-platform-api-ar-balance-pdf-reads-queue-from')
-('DPFM_API_AP_BALANCE_SRV', 'READ', 'data-platform-api-ap-balance-reads', '30803', 'data-platform-api-ap-balance-reads-queue-from')
-('DPFM_API_AP_BALANCE_SRV', 'CREATE', 'data-platform-api-ap-balance-creates', '30804', 'data-platform-api-ap-balance-creates-queue-from')
-('DPFM_API_AP_BALANCE_SRV', 'UPDATE', 'data-platform-api-ap-balance-updates', '30805', 'data-platform-api-ap-balance-updates-queue-from')
-('DPFM_API_AP_BALANCE_SRV', 'CREATE', 'data-platform-api-ap-balance-pdf-creates', '30806', 'data-platform-api-ap-balance-pdf-creates-queue-from')
-('DPFM_API_AP_BALANCE_SRV', 'UPDATE', 'data-platform-api-ap-balance-pdf-updates', '30807', 'data-platform-api-ap-balance-pdf-updates-queue-from')
-('DPFM_API_AP_BALANCE_SRV', 'DETELE', 'data-platform-api-ap-balance-pdf-deletes', '30808', 'data-platform-api-ap-balance-pdf-deletes-queue-from')
-('DPFM_API_AP_BALANCE_SRV', 'READ', 'data-platform-api-ap-balance-pdf-reads', '30809', 'data-platform-api-ap-balance-pdf-reads-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'READ', 'data-platform-api-trial-balance-reads', '30810', 'data-platform-api-trial-balance-reads-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'CREATE', 'data-platform-api-trial-balance-creates', '30811', 'data-platform-api-trial-balance-creates-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'UPDATE', 'data-platform-api-trial-balance-updates', '30812', 'data-platform-api-trial-balance-updates-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'CREATE', 'data-platform-api-trial-balance-pdf-creates', '30813', 'data-platform-api-trial-balance-pdf-creates-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'UPDATE', 'data-platform-api-trial-balance-pdf-updates', '30814', 'data-platform-api-trial-balance-pdf-updates-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'DETELE', 'data-platform-api-trial-balance-pdf-deletes', '30815', 'data-platform-api-trial-balance-pdf-deletes-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'READ', 'data-platform-api-trial-balance-pdf-reads', '30816', 'data-platform-api-trial-balance-pdf-reads-queue-from')
-('DPFM_API_TRIAL_BALANCE_SRV', 'EXCONF', 'data-platform-api-trial-balance-exconf', '30817', 'data-platform-api-trial-balance-exconf-queue-from')
-('DPFM_API_BALANCE_SHEET_SRV', 'READ', 'data-platform-api-balance-sheet-reads', '30818', 'data-platform-api-balance-sheet-reads-queue-from')
-('DPFM_API_BALANCE_SHEET_SRV', 'CREATE', 'data-platform-api-balance-sheet-creates', '30819', 'data-platform-api-balance-sheet-creates-queue-from')
-('DPFM_API_BALANCE_SHEET_SRV', 'UPDATE', 'data-platform-api-balance-sheet-updates', '30820', 'data-platform-api-balance-sheet-updates-queue-from')
-('DPFM_API_BALANCE_SHEET_SRV', 'CREATE', 'data-platform-api-balance-sheet-pdf-creates', '30821', 'data-platform-api-balance-sheet-pdf-creates-queue-from')
-('DPFM_API_BALANCE_SHEET_SRV', 'UPDATE', 'data-platform-api-balance-sheet-pdf-updates', '30822', 'data-platform-api-balance-sheet-pdf-updates-queue-from')
-('DPFM_API_BALANCE_SHEET_SRV', 'DETELE', 'data-platform-api-balance-sheet-pdf-deletes', '30823', 'data-platform-api-balance-sheet-pdf-deletes-queue-from')
-('DPFM_API_BALANCE_SHEET_SRV', 'READ', 'data-platform-api-balance-sheet-pdf-reads', '30824', 'data-platform-api-balance-sheet-pdf-reads-queue-from')
-('DPFM_API_PROFIT_LOSS_SRV', 'READ', 'data-platform-api-profit-loss-reads', '30825', 'data-platform-api-profit-loss-reads-queue-from')
-('DPFM_API_PROFIT_LOSS_SRV', 'CREATE', 'data-platform-api-profit-loss-creates', '30826', 'data-platform-api-profit-loss-creates-queue-from')
-('DPFM_API_PROFIT_LOSS_SRV', 'UPDATE', 'data-platform-api-profit-loss-updates', '30827', 'data-platform-api-profit-loss-updates-queue-from')
-('DPFM_API_PROFIT_LOSS_SRV', 'CREATE', 'data-platform-api-profit-loss-pdf-creates', '30828', 'data-platform-api-profit-loss-pdf-creates-queue-from')
-('DPFM_API_PROFIT_LOSS_SRV', 'UPDATE', 'data-platform-api-profit-loss-pdf-updates', '30829', 'data-platform-api-profit-loss-pdf-updates-queue-from')
-('DPFM_API_PROFIT_LOSS_SRV', 'DETELE', 'data-platform-api-profit-loss-pdf-deletes', '30830', 'data-platform-api-profit-loss-pdf-deletes-queue-from')
-('DPFM_API_PROFIT_LOSS_SRV', 'READ', 'data-platform-api-profit-loss-pdf-reads', '30831', 'data-platform-api-profit-loss-pdf-reads-queue-from')
-('DPFM_API_SALES_REPORT_SRV', 'READ', 'data-platform-api-sales-report-reads', '30832', 'data-platform-api-sales-report-reads-queue-from')
-('DPFM_API_SALES_REPORT_SRV', 'CREATE', 'data-platform-api-sales-report-creates', '30833', 'data-platform-api-sales-report-creates-queue-from')
-('DPFM_API_SALES_REPORT_SRV', 'UPDATE', 'data-platform-api-sales-report-updates', '30834', 'data-platform-api-sales-report-updates-queue-from')
-('DPFM_API_SALES_REPORT_SRV', 'CREATE', 'data-platform-api-sales-report-pdf-creates', '30835', 'data-platform-api-sales-report-pdf-creates-queue-from')
-('DPFM_API_SALES_REPORT_SRV', 'UPDATE', 'data-platform-api-sales-report-pdf-updates', '30836', 'data-platform-api-sales-report-pdf-updates-queue-from')
-('DPFM_API_SALES_REPORT_SRV', 'DETELE', 'data-platform-api-sales-report-pdf-deletes', '30837', 'data-platform-api-sales-report-pdf-deletes-queue-from')
-('DPFM_API_SALES_REPORT_SRV', 'READ', 'data-platform-api-sales-report-pdf-reads', '30838', 'data-platform-api-sales-report-pdf-reads-queue-from')
-('DPFM_API_PAYMENT_REPORT_SRV', 'READ', 'data-platform-api-payment-report-reads', '30839', 'data-platform-api-payment-report-reads-queue-from')
-('DPFM_API_PAYMENT_REPORT_SRV', 'CREATE', 'data-platform-api-payment-report-creates', '30840', 'data-platform-api-payment-report-creates-queue-from')
-('DPFM_API_PAYMENT_REPORT_SRV', 'UPDATE', 'data-platform-api-payment-report-updates', '30841', 'data-platform-api-payment-report-updates-queue-from')
-('DPFM_API_PAYMENT_REPORT_SRV', 'CREATE', 'data-platform-api-payment-report-pdf-creates', '30842', 'data-platform-api-payment-report-pdf-creates-queue-from')
-('DPFM_API_PAYMENT_REPORT_SRV', 'UPDATE', 'data-platform-api-payment-report-pdf-updates', '30843', 'data-platform-api-payment-report-pdf-updates-queue-from')
-('DPFM_API_PAYMENT_REPORT_SRV', 'DETELE', 'data-platform-api-payment-report-pdf-deletes', '30844', 'data-platform-api-payment-report-pdf-deletes-queue-from')
-('DPFM_API_PAYMENT_REPORT_SRV', 'READ', 'data-platform-api-payment-report-pdf-reads', '30845', 'data-platform-api-payment-report-pdf-reads-queue-from')
-('DPFM_API_PROJECT_SRV', 'READ', 'data-platform-api-payment-report-reads', '30846', 'data-platform-api-payment-report-reads-queue-from')
-('DPFM_API_PROJECT_SRV', 'CREATE', 'data-platform-api-payment-report-creates', '30847', 'data-platform-api-payment-report-creates-queue-from')
-('DPFM_API_PROJECT_SRV', 'UPDATE', 'data-platform-api-payment-report-updates', '30848', 'data-platform-api-payment-report-updates-queue-from')
-('DPFM_API_PROJECT_SRV', 'EXCONF', 'data-platform-api-payment-report-exconf', '30849', 'data-platform-api-payment-report-exconf-queue-from')
-('DPFM_FUNCTION_PRODUCT_INVENTORY_UPDATES_SRV', 'FUNCTION', 'data-platform-function-product-inventory-updates', '30850', 'data-platform-function-product-inventory-updates-queue-from')
-('DPFM_FUNCTION_PRODUCT_AVAILABILITY_CALCULATION_SRV', 'FUNCTION', 'data-platform-function-product-availability-calculation', '30851', 'data-platform-function-product-availability-calculation-queue-from')
-('DPFM_FUNCTION_QUOTATIONS_SRV', 'FUNCTION', 'data-platform-function-orders-convert-pr-to-pq', '30852', 'data-platform-function-orders-convert-pr-to-pq-queue-from')
-('DPFM_FUNCTION_QUOTATIONS_SRV', 'FUNCTION', 'data-platform-function-quotations-creates-subfunc', '30853', 'data-platform-function-quotations-creates-subfunc-queue-from')
-('DPFM_FUNCTION_ORDERS_SRV', 'FUNCTION', 'data-platform-function-orders-creates-qt-ref', '30854', 'data-platform-function-orders-creates-qt-ref-queue-from')
-('DPFM_FUNCTION_ORDERS_SRV', 'FUNCTION', 'data-platform-function-orders-convert-po-to-so', '30855', 'data-platform-function-orders-convert-po-to-so-queue-from')
-('DPFM_FUNCTION_ORDERS_SRV', 'FUNCTION', 'data-platform-function-orders-creates-subfunc', '30856', 'data-platform-function-orders-creates-subfunc-queue-from')
-('DPFM_FUNCTION_DELIVERY_DOCUMENT_SRV', 'FUNCTION', 'data-platform-function-delivery-document-creates-convert-od-to-dl', '30857', 'data-platform-function-delivery-document-creates-convert-od-to-dl-queue-from')
-('DPFM_FUNCTION_DELIVERY_DOCUMENT_SRV', 'FUNCTION', 'data-platform-function-delivery-document-creates-conversion', '30858', 'data-platform-function-delivery-document-creates-conversion-queue-from')
-('DPFM_FUNCTION_DELIVERY_DOCUMENT_SRV', 'FUNCTION', 'data-platform-function-delivery-document-creates-subfunc', '30859', 'data-platform-function-delivery-document-creates-subfunc-queue-from')
-('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION', 'data-platform-function-invoice-document-creates-batch', '30860', 'data-platform-function-invoice-document-creates-batch-queue-from')
-('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION', 'data-platform-function-invoice-document-creates-convert-bl-to-si', '30861', 'data-platform-function-invoice-document-creates-convert-bl-to-si-queue-from')
-('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION', 'data-platform-function-invoice-document-creates-convert-dpfm-to-peppol', '30862', 'data-platform-function-invoice-document-creates-convert-dpfm-to-peppol-queue-from')
-('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION', 'data-platform-function-invoice-document-creates-convert-dpfm-to-jp-pint', '30863', 'data-platform-function-invoice-document-creates-convert-dpfm-to-jp-pint-queue-from')
-('DPFM_FUNCTION_PAYMENT_REQUISITION_SRV', 'FUNCTION', 'data-platform-function-payment-requisition-creates-convert-dpfm-to-zedi', '30864', 'data-platform-function-payment-requisition-creates-convert-dpfm-to-zedi-queue-from')
-('DPFM_FUNCTION_BANK_STATEMENT_SRV', 'FUNCTION', 'data-platform-function-bank-statement-creates', '30865', 'data-platform-function-bank-statement-creates-queue-from')
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'READ', 'data-platform-api-business-partner-reads', '30500', 'data-platform-api-business-partner-reads-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'CREATE', 'data-platform-api-business-partner-creates', '30501', 'data-platform-api-business-partner-creates-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'UPDATE', 'data-platform-api-business-partner-updates', '30502', 'data-platform-api-business-partner-updates-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'CREATE', 'data-platform-api-business-partner-pdf-creates', '30503', 'data-platform-api-business-partner-pdf-creates-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'UPDATE', 'data-platform-api-business-partner-pdf-updates', '30504', 'data-platform-api-business-partner-pdf-updates-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'DETELE', 'data-platform-api-business-partner-pdf-deletes', '30505', 'data-platform-api-business-partner-pdf-deletes-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'CANCEL', 'data-platform-api-business-partner-pdf-cancels', '30506', 'data-platform-api-business-partner-pdf-cancels-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'READ', 'data-platform-api-business-partner-pdf-reads', '30507', 'data-platform-api-business-partner-pdf-reads-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV', 'BUSINESS_PARTNER', 'EXCONF', 'data-platform-api-business-partner-exconf', '30508', 'data-platform-api-business-partner-exconf-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'BUSINESS_PARTNER_CUSTOMER', 'READ', 'data-platform-api-business-partner-reads-customer', '30509', 'data-platform-api-business-partner-reads-customer-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'BUSINESS_PARTNER_CUSTOMER', 'CREATE', 'data-platform-api-business-partner-creates-customer', '30510', 'data-platform-api-business-partner-creates-customer-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'BUSINESS_PARTNER_CUSTOMER', 'UPDATE', 'data-platform-api-business-partner-updates-customer', '30511', 'data-platform-api-business-partner-updates-customer-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_CUSTOMER', 'BUSINESS_PARTNER_CUSTOMER', 'EXCONF', 'data-platform-api-business-partner-exconf-customer', '30512', 'data-platform-api-business-partner-exconf-customer-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'BUSINESS_PARTNER_SUPPLIER', 'READ', 'data-platform-api-business-partner-reads-supplier', '30513', 'data-platform-api-business-partner-reads-supplier-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'BUSINESS_PARTNER_SUPPLIER', 'CREATE', 'data-platform-api-business-partner-creates-supplier', '30514', 'data-platform-api-business-partner-creates-supplier-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'BUSINESS_PARTNER_SUPPLIER', 'UPDATE', 'data-platform-api-business-partner-updates-supplier', '30515', 'data-platform-api-business-partner-updates-supplier-queue-from');
+('DPFM_API_BUSINESS_PARTNER_SRV_SUPPLIER', 'BUSINESS_PARTNER_SUPPLIER', 'EXCONF', 'data-platform-api-business-partner-exconf-supplier', '30516', 'data-platform-api-business-partner-exconf-supplier-queue-from');
+('DPFM_API_PARTNER_FUNCTION_SRV', 'PARTNER_FUNCTION', 'READ', 'data-platform-api-partner-function-reads', '30517', 'data-platform-api-partner-function-reads-queue-from');
+('DPFM_API_PARTNER_FUNCTION_SRV', 'PARTNER_FUNCTION', 'CREATE', 'data-platform-api-partner-function-creates', '30518', 'data-platform-api-partner-function-creates-queue-from');
+('DPFM_API_PARTNER_FUNCTION_SRV', 'PARTNER_FUNCTION', 'UPDATE', 'data-platform-api-partner-function-updates', '30519', 'data-platform-api-partner-function-updates-queue-from');
+('DPFM_API_PARTNER_FUNCTION_SRV', 'PARTNER_FUNCTION', 'UPDATE', 'data-platform-api-partner-function-deletes', '30520', 'data-platform-api-partner-function-deletes-queue-from');
+('DPFM_API_PARTNER_FUNCTION_SRV', 'PARTNER_FUNCTION', 'EXCONF', 'data-platform-api-partner-function-exconf', '30521', 'data-platform-api-partner-function-exconf-queue-from');
+('DPFM_API_PRICE_MASTER_SRV', 'PRICE_MASTER', 'READ', 'data-platform-api-price-master-reads', '30522', 'data-platform-api-price-master-reads-queue-from');
+('DPFM_API_PRICE_MASTER_SRV', 'PRICE_MASTER', 'CREATE', 'data-platform-api-price-master-creates', '30523', 'data-platform-api-price-master-creates-queue-from');
+('DPFM_API_PRICE_MASTER_SRV', 'PRICE_MASTER', 'UPDATE', 'data-platform-api-price-master-updates', '30524', 'data-platform-api-price-master-updates-queue-from');
+('DPFM_API_PRICE_MASTER_SRV', 'PRICE_MASTER', 'EXCONF', 'data-platform-api-price-master-exconf', '30525', 'data-platform-api-price-master-exconf-queue-from');
+('DPFM_API_FIN_INST_MASTER_SRV', 'FIN_INST_MASTER', 'READ', 'data-platform-api-fin-inst-master-reads', '30526', 'data-platform-api-fin-inst-master-reads-queue-from');
+('DPFM_API_FIN_INST_MASTER_SRV', 'FIN_INST_MASTER', 'CREATE', 'data-platform-api-fin-inst-master-creates', '30527', 'data-platform-api-fin-inst-master-creates-queue-from');
+('DPFM_API_FIN_INST_MASTER_SRV', 'FIN_INST_MASTER', 'UPDATE', 'data-platform-api-fin-inst-master-updates', '30528', 'data-platform-api-fin-inst-master-updates-queue-from');
+('DPFM_API_FIN_INST_MASTER_SRV', 'FIN_INST_MASTER', 'UPDATE', 'data-platform-api-fin-inst-master-deletes', '30529', 'data-platform-api-fin-inst-master-deletes-queue-from');
+('DPFM_API_FIN_INST_MASTER_SRV', 'FIN_INST_MASTER', 'EXCONF', 'data-platform-api-bank-master-exconf', '30530', 'data-platform-api-bank-master-exconf-queue-from');
+('DPFM_API_FIN_INST_ACCOUNT_SRV', 'FIN_INST_ACCOUNT', 'READ', 'data-platform-api-fin-inst-account-reads', '30531', 'data-platform-api-fin-inst-account-reads-queue-from');
+('DPFM_API_FIN_INST_ACCOUNT_SRV', 'FIN_INST_ACCOUNT', 'CREATE', 'data-platform-api-fin-inst-account-creates', '30532', 'data-platform-api-fin-inst-account-creates-queue-from');
+('DPFM_API_FIN_INST_ACCOUNT_SRV', 'FIN_INST_ACCOUNT', 'UPDATE', 'data-platform-api-fin-inst-account-updates', '30533', 'data-platform-api-fin-inst-account-updates-queue-from');
+('DPFM_API_FIN_INST_ACCOUNT_SRV', 'FIN_INST_ACCOUNT', 'UPDATE', 'data-platform-api-fin-inst-account-deletes', '30534', 'data-platform-api-fin-inst-account-deletes-queue-from');
+('DPFM_API_FIN_INST_ACCOUNT_SRV', 'FIN_INST_ACCOUNT', 'EXCONF', 'data-platform-api-fin-inst-account-exconf', '30535', 'data-platform-api-fin-inst-account-exconf-queue-from');
+('DPFM_API_BUSINESS_USER_SRV', 'BUSINESS_USER', 'READ', 'data-platform-api-business-user-reads', '30536', 'data-platform-api-business-user-reads-queue-from');
+('DPFM_API_BUSINESS_USER_SRV', 'BUSINESS_USER', 'CREATE', 'data-platform-api-business-user-creates', '30537', 'data-platform-api-business-user-creates-queue-from');
+('DPFM_API_BUSINESS_USER_SRV', 'BUSINESS_USER', 'UPDATE', 'data-platform-api-business-user-updates', '30538', 'data-platform-api-business-user-updates-queue-from');
+('DPFM_API_BUSINESS_USER_SRV', 'BUSINESS_USER', 'UPDATE', 'data-platform-api-business-user-deletes', '30539', 'data-platform-api-business-user-deletes-queue-from');
+('DPFM_API_BUSINESS_USER_SRV', 'BUSINESS_USER', 'EXCONF', 'data-platform-api-business-user-exconf', '30540', 'data-platform-api-business-user-exconf-queue-from');
+('DPFM_API_ORGANIZTION_SRV', 'ORGANIZTION', 'READ', 'data-platform-api-organization-reads', '30541', 'data-platform-api-organization-reads-queue-from');
+('DPFM_API_ORGANIZTION_SRV', 'ORGANIZTION', 'CREATE', 'data-platform-api-organization-creates', '30542', 'data-platform-api-organization-creates-queue-from');
+('DPFM_API_ORGANIZTION_SRV', 'ORGANIZTION', 'UPDATE', 'data-platform-api-organization-updates', '30543', 'data-platform-api-organization-updates-queue-from');
+('DPFM_API_ORGANIZTION_SRV', 'ORGANIZTION', 'UPDATE', 'data-platform-api-organization-deletes', '30544', 'data-platform-api-organization-deletes-queue-from');
+('DPFM_API_ORGANIZTION_SRV', 'ORGANIZTION', 'EXCONF', 'data-platform-api-organization-exconf', '30545', 'data-platform-api-organization-exconf-queue-from');
+('DPFM_API_PLANT_SRV', 'PLANT', 'READ', 'data-platform-api-plant-reads', '30546', 'data-platform-api-plant-reads-queue-from');
+('DPFM_API_PLANT_SRV', 'PLANT', 'CREATE', 'data-platform-api-plant-creates', '30547', 'data-platform-api-plant-creates-queue-from');
+('DPFM_API_PLANT_SRV', 'PLANT', 'UPDATE', 'data-platform-api-plant-updates', '30548', 'data-platform-api-plant-updates-queue-from');
+('DPFM_API_PLANT_SRV', 'PLANT', 'UPDATE', 'data-platform-api-plant-deletes', '30549', 'data-platform-api-plant-deletes-queue-from');
+('DPFM_API_PLANT_SRV', 'PLANT', 'EXCONF', 'data-platform-api-plant-exconf', '30550', 'data-platform-api-plant-exconf-queue-from');
+('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'SUPPLY_CHAIN_RELATIONSHIP', 'READ', 'data-platform-api-supply-chain-relationship-reads', '30551', 'data-platform-api-supply-chain-relationship-reads-queue-from');
+('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'SUPPLY_CHAIN_RELATIONSHIP', 'CREATE', 'data-platform-api-supply-chain-relationship-creates', '30552', 'data-platform-api-supply-chain-relationship-creates-queue-from');
+('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'SUPPLY_CHAIN_RELATIONSHIP', 'UPDATE', 'data-platform-api-supply-chain-relationship-updates', '30553', 'data-platform-api-supply-chain-relationship-updates-queue-from');
+('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'SUPPLY_CHAIN_RELATIONSHIP', 'UPDATE', 'data-platform-api-supply-chain-relationship-deletes', '30554', 'data-platform-api-supply-chain-relationship-deletes-queue-from');
+('DPFM_API_SUPPLY_CHAIN_RELATIONSHIP_SRV', 'SUPPLY_CHAIN_RELATIONSHIP', 'EXCONF', 'data-platform-api-supply-chain-relationship-exconf', '30555', 'data-platform-api-supply-chain-relationship-exconf-queue-from');
+('DPFM_API_BUSINESS_AREA_SRV', 'BUSINESS_AREA', 'READ', 'data-platform-api-business-area-reads', '30556', 'data-platform-api-business-area-reads-queue-from');
+('DPFM_API_BUSINESS_AREA_SRV', 'BUSINESS_AREA', 'CREATE', 'data-platform-api-business-area-creates', '30557', 'data-platform-api-business-area-creates-queue-from');
+('DPFM_API_BUSINESS_AREA_SRV', 'BUSINESS_AREA', 'UPDATE', 'data-platform-api-business-area-updates', '30558', 'data-platform-api-business-area-updates-queue-from');
+('DPFM_API_BUSINESS_AREA_SRV', 'BUSINESS_AREA', 'UPDATE', 'data-platform-api-business-area-deletes', '30559', 'data-platform-api-business-area-deletes-queue-from');
+('DPFM_API_BUSINESS_AREA_SRV', 'BUSINESS_AREA', 'EXCONF', 'data-platform-api-business-area-exconf', '30560', 'data-platform-api-business-area-exconf-queue-from');
+('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'GENERAL_LEDGER_ACCOUNT', 'READ', 'data-platform-api-general-ledger-account-reads', '30561', 'data-platform-api-general-ledger-account-reads-queue-from');
+('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'GENERAL_LEDGER_ACCOUNT', 'CREATE', 'data-platform-api-general-ledger-account-creates', '30562', 'data-platform-api-general-ledger-account-creates-queue-from');
+('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'GENERAL_LEDGER_ACCOUNT', 'UPDATE', 'data-platform-api-general-ledger-account-updates', '30563', 'data-platform-api-general-ledger-account-updates-queue-from');
+('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'GENERAL_LEDGER_ACCOUNT', 'UPDATE', 'data-platform-api-general-ledger-account-deletes', '30564', 'data-platform-api-general-ledger-account-deletes-queue-from');
+('DPFM_API_GENERAL_LEDGER_ACCOUNT_SRV', 'GENERAL_LEDGER_ACCOUNT', 'EXCONF', 'data-platform-api-general-ledger-account-exconf', '30565', 'data-platform-api-general-ledger-account-exconf-queue-from');
+('DPFM_API_POSTAL_CODE_SRV', 'POSTAL_CODE', 'READ', 'data-platform-api-postal-code-reads', '30566', 'data-platform-api-postal-code-reads-queue-from');
+('DPFM_API_POSTAL_CODE_SRV', 'POSTAL_CODE', 'CREATE', 'data-platform-api-postal-code-creates', '30567', 'data-platform-api-postal-code-creates-queue-from');
+('DPFM_API_POSTAL_CODE_SRV', 'POSTAL_CODE', 'UPDATE', 'data-platform-api-postal-code-updates', '30568', 'data-platform-api-postal-code-updates-queue-from');
+('DPFM_API_POSTAL_CODE_SRV', 'POSTAL_CODE', 'EXCONF', 'data-platform-api-postal-code-exconf', '30569', 'data-platform-api-postal-code-exconf-queue-from');
+('DPFM_API_ADDRESS_SRV', 'ADDRESS', 'READ', 'data-platform-api-address-reads', '30570', 'data-platform-api-address-reads-queue-from');
+('DPFM_API_ADDRESS_SRV', 'ADDRESS', 'CREATE', 'data-platform-api-address-creates', '30571', 'data-platform-api-address-creates-queue-from');
+('DPFM_API_ADDRESS_SRV', 'ADDRESS', 'UPDATE', 'data-platform-api-address-updates', '30572', 'data-platform-api-address-updates-queue-from');
+('DPFM_API_ADDRESS_SRV', 'ADDRESS', 'EXCONF', 'data-platform-api-address-exconf', '30573', 'data-platform-api-address-exconf-queue-from');
+('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'DISTRIBUTION_CHANNEL', 'READ', 'data-platform-api-distribution-channel-reads', '30574', 'data-platform-api-distribution-channel-reads-queue-from');
+('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'DISTRIBUTION_CHANNEL', 'CREATE', 'data-platform-api-distribution-channel-creates', '30575', 'data-platform-api-distribution-channel-creates-queue-from');
+('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'DISTRIBUTION_CHANNEL', 'UPDATE', 'data-platform-api-distribution-channel-updates', '30576', 'data-platform-api-distribution-channel-updates-queue-from');
+('DPFM_API_DISTRIBUTION_CHANNEL_SRV', 'DISTRIBUTION_CHANNEL', 'EXCONF', 'data-platform-api-distribution-channel-exconf', '30577', 'data-platform-api-distribution-channel-exconf-queue-from');
+('DPFM_API_DIVISION_SRV', 'DIVISION', 'READ', 'data-platform-api-division-reads', '30578', 'data-platform-api-division-reads-queue-from');
+('DPFM_API_DIVISION_SRV', 'DIVISION', 'CREATE', 'data-platform-api-division-creates', '30579', 'data-platform-api-division-creates-queue-from');
+('DPFM_API_DIVISION_SRV', 'DIVISION', 'UPDATE', 'data-platform-api-division-updates', '30580', 'data-platform-api-division-updates-queue-from');
+('DPFM_API_DIVISION_SRV', 'DIVISION', 'EXCONF', 'data-platform-api-division-exconf', '30581', 'data-platform-api-division-exconf-queue-from');
+('DPFM_API_INDUSTRY_SRV', 'INDUSTRY', 'READ', 'data-platform-api-industry-reads', '30582', 'data-platform-api-industry-reads-queue-from');
+('DPFM_API_INDUSTRY_SRV', 'INDUSTRY', 'CREATE', 'data-platform-api-industry-creates', '30583', 'data-platform-api-industry-creates-queue-from');
+('DPFM_API_INDUSTRY_SRV', 'INDUSTRY', 'UPDATE', 'data-platform-api-industry-updates', '30584', 'data-platform-api-industry-updates-queue-from');
+('DPFM_API_INDUSTRY_SRV', 'INDUSTRY', 'EXCONF', 'data-platform-api-industry-exconf', '30585', 'data-platform-api-industry-exconf-queue-from');
+('DPFM_API_COUNTRY_SRV', 'COUNTRY', 'READ', 'data-platform-api-country-reads', '30586', 'data-platform-api-country-reads-queue-from');
+('DPFM_API_COUNTRY_SRV', 'COUNTRY', 'CREATE', 'data-platform-api-country-creates', '30587', 'data-platform-api-country-creates-queue-from');
+('DPFM_API_COUNTRY_SRV', 'COUNTRY', 'UPDATE', 'data-platform-api-country-updates', '30588', 'data-platform-api-country-updates-queue-from');
+('DPFM_API_COUNTRY_SRV', 'COUNTRY', 'EXCONF', 'data-platform-api-country-exconf', '30589', 'data-platform-api-country-exconf-queue-from');
+('DPFM_API_LOCAL_REGION_SRV', 'LOCAL_REGION', 'READ', 'data-platform-api-local-region-reads', '30590', 'data-platform-api-local-region-reads-queue-from');
+('DPFM_API_LOCAL_REGION_SRV', 'LOCAL_REGION', 'CREATE', 'data-platform-api-local-region-creates', '30591', 'data-platform-api-local-region-creates-queue-from');
+('DPFM_API_LOCAL_REGION_SRV', 'LOCAL_REGION', 'UPDATE', 'data-platform-api-local-region-updates', '30592', 'data-platform-api-local-region-updates-queue-from');
+('DPFM_API_LOCAL_REGION_SRV', 'LOCAL_REGION', 'EXCONF', 'data-platform-api-local-region-exconf', '30593', 'data-platform-api-local-region-exconf-queue-from');
+('DPFM_API_GLOBAL_REGION_SRV', 'GLOBAL_REGION', 'READ', 'data-platform-api-global-region-reads', '30594', 'data-platform-api-global-region-reads-queue-from');
+('DPFM_API_GLOBAL_REGION_SRV', 'GLOBAL_REGION', 'CREATE', 'data-platform-api-global-region-creates', '30595', 'data-platform-api-global-region-creates-queue-from');
+('DPFM_API_GLOBAL_REGION_SRV', 'GLOBAL_REGION', 'UPDATE', 'data-platform-api-global-region-updates', '30596', 'data-platform-api-global-region-updates-queue-from');
+('DPFM_API_GLOBAL_REGION_SRV', 'GLOBAL_REGION', 'EXCONF', 'data-platform-api-global-region-exconf', '30597', 'data-platform-api-global-region-exconf-queue-from');
+('DPFM_API_CURRENCY_SRV', 'CURRENCY', 'READ', 'data-platform-api-currency-reads', '30598', 'data-platform-api-currency-reads-queue-from');
+('DPFM_API_CURRENCY_SRV', 'CURRENCY', 'CREATE', 'data-platform-api-currency-creates', '30599', 'data-platform-api-currency-creates-queue-from');
+('DPFM_API_CURRENCY_SRV', 'CURRENCY', 'UPDATE', 'data-platform-api-currency-updates', '30600', 'data-platform-api-currency-updates-queue-from');
+('DPFM_API_CURRENCY_SRV', 'CURRENCY', 'EXCONF', 'data-platform-api-currency-exconf', '30601', 'data-platform-api-currency-exconf-queue-from');
+('DPFM_API_TAX_CODE_SRV', 'TAX_CODE', 'READ', 'data-platform-api-tax-code-reads', '30602', 'data-platform-api-tax-code-reads-queue-from');
+('DPFM_API_TAX_CODE_SRV', 'TAX_CODE', 'CREATE', 'data-platform-api-tax-code-creates', '30603', 'data-platform-api-tax-code-creates-queue-from');
+('DPFM_API_TAX_CODE_SRV', 'TAX_CODE', 'UPDATE', 'data-platform-api-tax-code-updates', '30604', 'data-platform-api-tax-code-updates-queue-from');
+('DPFM_API_TAX_CODE_SRV', 'TAX_CODE', 'EXCONF', 'data-platform-api-tax-code-exconf', '30605', 'data-platform-api-tax-code-exconf-queue-from');
+('DPFM_API_LANGUAGE_SRV', 'LANGUAGE', 'READ', 'data-platform-api-language-reads', '30606', 'data-platform-api-language-reads-queue-from');
+('DPFM_API_LANGUAGE_SRV', 'LANGUAGE', 'CREATE', 'data-platform-api-language-creates', '30607', 'data-platform-api-language-creates-queue-from');
+('DPFM_API_LANGUAGE_SRV', 'LANGUAGE', 'UPDATE', 'data-platform-api-language-updates', '30608', 'data-platform-api-language-updates-queue-from');
+('DPFM_API_LANGUAGE_SRV', 'LANGUAGE', 'EXCONF', 'data-platform-api-language-exconf', '30609', 'data-platform-api-language-exconf-queue-from');
+('DPFM_API_TIME_ZONE_SRV', 'TIME_ZONE', 'READ', 'data-platform-api-time-zone-reads', '30610', 'data-platform-api-time-zone-reads-queue-from');
+('DPFM_API_TIME_ZONE_SRV', 'TIME_ZONE', 'CREATE', 'data-platform-api-time-zone-creates', '30611', 'data-platform-api-time-zone-creates-queue-from');
+('DPFM_API_TIME_ZONE_SRV', 'TIME_ZONE', 'UPDATE', 'data-platform-api-time-zone-updates', '30612', 'data-platform-api-time-zone-updates-queue-from');
+('DPFM_API_TIME_ZONE_SRV', 'TIME_ZONE', 'EXCONF', 'data-platform-api-time-zone-exconf', '30613', 'data-platform-api-time-zone-exconf-queue-from');
+('DPFM_API_NUMBER_RANGE_SRV', 'NUMBER_RANGE', 'READ', 'data-platform-api-number-range-reads', '30614', 'data-platform-api-number-range-reads-queue-from');
+('DPFM_API_NUMBER_RANGE_SRV', 'NUMBER_RANGE', 'CREATE', 'data-platform-api-number-range-creates', '30615', 'data-platform-api-number-range-creates-queue-from');
+('DPFM_API_NUMBER_RANGE_SRV', 'NUMBER_RANGE', 'UPDATE', 'data-platform-api-number-range-updates', '30616', 'data-platform-api-number-range-updates-queue-from');
+('DPFM_API_NUMBER_RANGE_SRV', 'NUMBER_RANGE', 'EXCONF', 'data-platform-api-number-range-exconf', '30617', 'data-platform-api-number-range-exconf-queue-from');
+('DPFM_API_DOC_TYPE_SRV', 'DOC_TYPE', 'READ', 'data-platform-api-doc-type-reads', '30618', 'data-platform-api-doc-type-reads-queue-from');
+('DPFM_API_DOC_TYPE_SRV', 'DOC_TYPE', 'CREATE', 'data-platform-api-doc-type-creates', '30619', 'data-platform-api-doc-type-creates-queue-from');
+('DPFM_API_DOC_TYPE_SRV', 'DOC_TYPE', 'UPDATE', 'data-platform-api-doc-type-updates', '30620', 'data-platform-api-doc-type-updates-queue-from');
+('DPFM_API_DOC_TYPE_SRV', 'DOC_TYPE', 'EXCONF', 'data-platform-api-doc-type-exconf', '30621', 'data-platform-api-doc-type-exconf-queue-from');
+('DPFM_BPGROUP_1_SRV', 'BPGROUP_1', 'READ', 'data-platform-api-bpgroup-1-reads', '30622', 'data-platform-api-bpgroup-1-reads-queue-from');
+('DPFM_BPGROUP_1_SRV', 'BPGROUP_1', 'CREATE', 'data-platform-api-bpgroup-1-creates', '30623', 'data-platform-api-bpgroup-1-creates-queue-from');
+('DPFM_BPGROUP_1_SRV', 'BPGROUP_1', 'UPDATE', 'data-platform-api-bpgroup-1-updates', '30624', 'data-platform-api-bpgroup-1-updates-queue-from');
+('DPFM_BPGROUP_1_SRV', 'BPGROUP_1', 'EXCONF', 'data-platform-api-bpgroup-1-exconf', '30625', 'data-platform-api-bpgroup-1-exconf-queue-from');
+('DPFM_BPGROUP_2_SRV', 'BPGROUP_2', 'READ', 'data-platform-api-bpgroup-2-reads', '30626', 'data-platform-api-bpgroup-2-reads-queue-from');
+('DPFM_BPGROUP_2_SRV', 'BPGROUP_2', 'CREATE', 'data-platform-api-bpgroup-2-creates', '30627', 'data-platform-api-bpgroup-2-creates-queue-from');
+('DPFM_BPGROUP_2_SRV', 'BPGROUP_2', 'UPDATE', 'data-platform-api-bpgroup-2-updates', '30628', 'data-platform-api-bpgroup-2-updates-queue-from');
+('DPFM_BPGROUP_2_SRV', 'BPGROUP_2', 'EXCONF', 'data-platform-api-bpgroup-2-exconf', '30629', 'data-platform-api-bpgroup-2-exconf-queue-from');
+('DPFM_BPGROUP_3_SRV', 'BPGROUP_3', 'READ', 'data-platform-api-bpgroup-3-reads', '30630', 'data-platform-api-bpgroup-3-reads-queue-from');
+('DPFM_BPGROUP_3_SRV', 'BPGROUP_3', 'CREATE', 'data-platform-api-bpgroup-3-creates', '30631', 'data-platform-api-bpgroup-3-creates-queue-from');
+('DPFM_BPGROUP_3_SRV', 'BPGROUP_3', 'UPDATE', 'data-platform-api-bpgroup-3-updates', '30632', 'data-platform-api-bpgroup-3-updates-queue-from');
+('DPFM_BPGROUP_3_SRV', 'BPGROUP_3', 'EXCONF', 'data-platform-api-bpgroup-3-exconf', '30633', 'data-platform-api-bpgroup-3-exconf-queue-from');
+('DPFM_BPGROUP_4_SRV', 'BPGROUP_4', 'READ', 'data-platform-api-bpgroup-4-reads', '30634', 'data-platform-api-bpgroup-4-reads-queue-from');
+('DPFM_BPGROUP_4_SRV', 'BPGROUP_4', 'CREATE', 'data-platform-api-bpgroup-4-creates', '30635', 'data-platform-api-bpgroup-4-creates-queue-from');
+('DPFM_BPGROUP_4_SRV', 'BPGROUP_4', 'UPDATE', 'data-platform-api-bpgroup-4-updates', '30636', 'data-platform-api-bpgroup-4-updates-queue-from');
+('DPFM_BPGROUP_4_SRV', 'BPGROUP_4', 'EXCONF', 'data-platform-api-bpgroup-4-exconf', '30637', 'data-platform-api-bpgroup-4-exconf-queue-from');
+('DPFM_BPGROUP_5_SRV', 'BPGROUP_5', 'READ', 'data-platform-api-bpgroup-5-reads', '30638', 'data-platform-api-bpgroup-5-reads-queue-from');
+('DPFM_BPGROUP_5_SRV', 'BPGROUP_5', 'CREATE', 'data-platform-api-bpgroup-5-creates', '30639', 'data-platform-api-bpgroup-5-creates-queue-from');
+('DPFM_BPGROUP_5_SRV', 'BPGROUP_5', 'UPDATE', 'data-platform-api-bpgroup-5-updates', '30640', 'data-platform-api-bpgroup-5-updates-queue-from');
+('DPFM_BPGROUP_5_SRV', 'BPGROUP_5', 'EXCONF', 'data-platform-api-bpgroup-5-exconf', '30641', 'data-platform-api-bpgroup-5-exconf-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'READ', 'data-platform-api-product-master-reads', '30642', 'data-platform-api-product-master-reads-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'CREATE', 'data-platform-api-product-master-creates', '30643', 'data-platform-api-product-master-creates-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'UPDATE', 'data-platform-api-product-master-updates', '30644', 'data-platform-api-product-master-updates-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'CREATE', 'data-platform-api-product-master-pdf-creates', '30645', 'data-platform-api-product-master-pdf-creates-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'UPDATE', 'data-platform-api-product-master-pdf-updates', '30646', 'data-platform-api-product-master-pdf-updates-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'DETELE', 'data-platform-api-product-master-pdf-deletes', '30647', 'data-platform-api-product-master-pdf-deletes-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'CANCEL', 'data-platform-api-product-master-pdf-cancels', '30648', 'data-platform-api-product-master-pdf-cancels-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'READ', 'data-platform-api-product-master-pdf-reads', '30649', 'data-platform-api-product-master-pdf-reads-queue-from');
+('DPFM_API_PRODUCT_MASTER_SRV', 'PRODUCT_MASTER', 'EXCONF', 'data-platform-api-product-master-exconf', '30650', 'data-platform-api-product-master-exconf-queue-from');
+('DPFM_API_PRODUCT_VARIANT_SRV', 'PRODUCT_VARIANT', 'READ', 'data-platform-api-product-variant-reads', '30651', 'data-platform-api-product-variant-reads-queue-from');
+('DPFM_API_PRODUCT_VARIANT_SRV', 'PRODUCT_VARIANT', 'CREATE', 'data-platform-api-product-variant-creates', '30652', 'data-platform-api-product-variant-creates-queue-from');
+('DPFM_API_PRODUCT_VARIANT_SRV', 'PRODUCT_VARIANT', 'UPDATE', 'data-platform-api-product-variant-updates', '30653', 'data-platform-api-product-variant-updates-queue-from');
+('DPFM_API_PRODUCT_VARIANT_SRV', 'PRODUCT_VARIANT', 'EXCONF', 'data-platform-api-product-variant-exconf', '30654', 'data-platform-api-product-variant-exconf-queue-from');
+('DPFM_API_PRODUCT_TYPE_SRV', 'PRODUCT_TYPE', 'READ', 'data-platform-api-product-type-reads', '30655', 'data-platform-api-product-type-reads-queue-from');
+('DPFM_API_PRODUCT_TYPE_SRV', 'PRODUCT_TYPE', 'CREATE', 'data-platform-api-product-type-creates', '30656', 'data-platform-api-product-type-creates-queue-from');
+('DPFM_API_PRODUCT_TYPE_SRV', 'PRODUCT_TYPE', 'UPDATE', 'data-platform-api-product-type-updates', '30657', 'data-platform-api-product-type-updates-queue-from');
+('DPFM_API_PRODUCT_TYPE_SRV', 'PRODUCT_TYPE', 'EXCONF', 'data-platform-api-product-type-exconf', '30658', 'data-platform-api-product-type-exconf-queue-from');
+('DPFM_API_PRODUCT_GROUP_SRV', 'PRODUCT_GROUP', 'READ', 'data-platform-api-product-group-reads', '30659', 'data-platform-api-product-group-reads-queue-from');
+('DPFM_API_PRODUCT_GROUP_SRV', 'PRODUCT_GROUP', 'CREATE', 'data-platform-api-product-group-creates', '30660', 'data-platform-api-product-group-creates-queue-from');
+('DPFM_API_PRODUCT_GROUP_SRV', 'PRODUCT_GROUP', 'UPDATE', 'data-platform-api-product-group-updates', '30661', 'data-platform-api-product-group-updates-queue-from');
+('DPFM_API_PRODUCT_GROUP_SRV', 'PRODUCT_GROUP', 'EXCONF', 'data-platform-api-product-group-exconf', '30662', 'data-platform-api-product-group-exconf-queue-from');
+('DPFM_API_QUANTITY_UNIT_SRV', 'QUANTITY_UNIT', 'READ', 'data-platform-api-quantity-unit-reads', '30663', 'data-platform-api-quantity-unit-reads-queue-from');
+('DPFM_API_QUANTITY_UNIT_SRV', 'QUANTITY_UNIT', 'CREATE', 'data-platform-api-quantity-unit-creates', '30664', 'data-platform-api-quantity-unit-creates-queue-from');
+('DPFM_API_QUANTITY_UNIT_SRV', 'QUANTITY_UNIT', 'UPDATE', 'data-platform-api-quantity-unit-updates', '30665', 'data-platform-api-quantity-unit-updates-queue-from');
+('DPFM_API_QUANTITY_UNIT_SRV', 'QUANTITY_UNIT', 'EXCONF', 'data-platform-api-quantity-unit-exconf', '30666', 'data-platform-api-quantity-unit-exconf-queue-from');
+('DPFM_API_QUANTITY_UNIT_CONVIRSION＿SRV', 'QUANTITY_UNIT_CONVIRSION', 'READ', 'data-platform-api-quantity-unit-convirsion-reads', '30667', 'data-platform-api-quantity-unit-convirsion-reads-queue-from');
+('DPFM_API_QUANTITY_UNIT_CONVIRSION＿SRV', 'QUANTITY_UNIT_CONVIRSION', 'CREATE', 'data-platform-api-quantity-unit-convirsion-creates', '30668', 'data-platform-api-quantity-unit-convirsion-creates-queue-from');
+('DPFM_API_QUANTITY_UNIT_CONVIRSION＿SRV', 'QUANTITY_UNIT_CONVIRSION', 'UPDATE', 'data-platform-api-quantity-unit-convirsion-updates', '30669', 'data-platform-api-quantity-unit-convirsion-updates-queue-from');
+('DPFM_API_QUANTITY_UNIT_CONVIRSION_SRV', 'QUANTITY_UNIT_CONVIRSION', 'EXCONF', 'data-platform-api-quantity-unit-convirsion-exconf', '30670', 'data-platform-api-quantity-unit-convirsion-exconf-queue-from');
+('DPFM_API_BATCH_MASTER_RECORD_SRV', 'BATCH_MASTER_RECORD', 'READ', 'data-platform-api-batch-master-record-reads', '30671', 'data-platform-api-batch-master-record-reads-queue-from');
+('DPFM_API_BATCH_MASTER_RECORD_SRV', 'BATCH_MASTER_RECORD', 'CREATE', 'data-platform-api-batch-master-record-creates', '30672', 'data-platform-api-batch-master-record-creates-queue-from');
+('DPFM_API_BATCH_MASTER_RECORD_SRV', 'BATCH_MASTER_RECORD', 'UPDATE', 'data-platform-api-batch-master-record-updates', '30673', 'data-platform-api-batch-master-record-updates-queue-from');
+('DPFM_API_BATCH_MASTER_RECORD_SRV', 'BATCH_MASTER_RECORD', 'EXCONF', 'data-platform-api-batch-master-record-exconf', '30674', 'data-platform-api-batch-master-record-exconf-queue-from');
+('DPFM_API_PRODUCT_STOCK_SRV', 'PRODUCT_STOCK', 'READ', 'data-platform-api-product-stock-reads', '30675', 'data-platform-api-product-stock-reads-queue-from');
+('DPFM_API_PRODUCT_STOCK_SRV', 'PRODUCT_STOCK', 'CREATE', 'data-platform-api-product-stock-creates', '30676', 'data-platform-api-product-stock-creates-queue-from');
+('DPFM_API_PRODUCT_STOCK_SRV', 'PRODUCT_STOCK', 'UPDATE', 'data-platform-api-product-stock-updates', '30677', 'data-platform-api-product-stock-updates-queue-from');
+('DPFM_API_PRODUCT_STOCK_SRV', 'PRODUCT_STOCK', 'EXCONF', 'data-platform-api-product-stock-exconf', '30678', 'data-platform-api-product-stock-exconf-queue-from');
+('DPFM_API_RESERVATION_DOCUMENT _SRV', 'RESERVATION_DOCUMENT ', 'READ', 'data_platform_api_reservation_document_reads', '30679', 'data_platform_api_reservation_document_reads-queue-from');
+('DPFM_API_RESERVATION_DOCUMENT _SRV', 'RESERVATION_DOCUMENT ', 'CREATE', 'data_platform_api_reservation_document_creates', '30680', 'data_platform_api_reservation_document_creates-queue-from');
+('DPFM_API_RESERVATION_DOCUMENT _SRV', 'RESERVATION_DOCUMENT ', 'UPDATE', 'data_platform_api_reservation_document_updates', '30681', 'data_platform_api_reservation_document_updates-queue-from');
+('DPFM_API_RESERVATION_DOCUMENT _SRV', 'RESERVATION_DOCUMENT ', 'EXCONF', 'data_platform_api_reservation_document_exconf', '30682', 'data_platform_api_reservation_document_exconf-queue-from');
+('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'GOODS_MOVEMENT_DOCUMENT', 'READ', 'data-platform-api-goods-movement-document-reads', '30683', 'data-platform-api-goods-movement-document-reads-queue-from');
+('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'GOODS_MOVEMENT_DOCUMENT', 'CREATE', 'data-platform-api-goods-movement-document-creates', '30684', 'data-platform-api-goods-movement-document-creates-queue-from');
+('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'GOODS_MOVEMENT_DOCUMENT', 'UPDATE', 'data-platform-api-goods-movement-document-updates', '30685', 'data-platform-api-goods-movement-document-updates-queue-from');
+('DPFM_API_GOODS_MOVEMENT_DOCUMENT_SRV', 'GOODS_MOVEMENT_DOCUMENT', 'EXCONF', 'data-platform-api-goods-movement-document-exconf', '30686', 'data-platform-api-goods-movement-document-exconf-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'READ', 'data-platform-api-bill-of-material-reads', '30687', 'data-platform-api-bill-of-material-reads-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'CREATE', 'data-platform-api-bill-of-material-creates', '30688', 'data-platform-api-bill-of-material-creates-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'UPDATE', 'data-platform-api-bill-of-material-updates', '30689', 'data-platform-api-bill-of-material-updates-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'CREATE', 'data-platform-api-bill-of-material-pdf-creates', '30690', 'data-platform-api-bill-of-material-pdf-creates-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'UPDATE', 'data-platform-api-bill-of-material-pdf-updates', '30691', 'data-platform-api-bill-of-material-pdf-updates-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'DETELE', 'data-platform-api-bill-of-material-pdf-deletes', '30692', 'data-platform-api-bill-of-material-pdf-deletes-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'CANCEL', 'data-platform-api-bill-of-material-pdf-cancels', '30693', 'data-platform-api-bill-of-material-pdf-cancels-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'READ', 'data-platform-api-bill-of-material-pdf-reads', '30694', 'data-platform-api-bill-of-material-pdf-reads-queue-from');
+('DPFM_API_BILL_OF_MATERIAL_SRV', 'BILL_OF_MATERIAL', 'EXCONF', 'data-platform-api-bill-of-material-exconf', '30695', 'data-platform-api-bill-of-material-exconf-queue-from');
+('DPFM_API_BOM_WHERE_USED_SRV', 'BOM_WHERE_USED', 'READ', 'data-platform-api-bill-of-material-where-used-list-reads', '30696', 'data-platform-api-bill-of-material-where-used-list-reads-queue-from');
+('DPFM_API_BOM_WHERE_USED_SRV', 'BOM_WHERE_USED', 'CREATE', 'data-platform-api-bill-of-material-where-used-list-creates', '30697', 'data-platform-api-bill-of-material-where-used-list-creates-queue-from');
+('DPFM_API_BOM_WHERE_USED_SRV', 'BOM_WHERE_USED', 'UPDATE', 'data-platform-api-bill-of-material-where-used-list-updates', '30698', 'data-platform-api-bill-of-material-where-used-list-updates-queue-from');
+('DPFM_API_BOM_WHERE_USED_SRV', 'BOM_WHERE_USED', 'CREATE', 'data-platform-api-bill-of-material-where-used-list-pdf-creates', '30699', 'data-platform-api-bill-of-material-where-used-list-pdf-creates-queue-from');
+('DPFM_API_BOM_WHERE_USED_SRV', 'BOM_WHERE_USED', 'UPDATE', 'data-platform-api-bill-of-material-where-used-list-pdf-updates', '30700', 'data-platform-api-bill-of-material-where-used-list-pdf-updates-queue-from');
+('DPFM_API_BOM_WHERE_USED_SRV', 'BOM_WHERE_USED', 'DETELE', 'data-platform-api-bill-of-material-where-used-list-pdf-deletes', '30701', 'data-platform-api-bill-of-material-where-used-list-pdf-deletes-queue-from');
+('DPFM_API_BOM_WHERE_USED_SRV', 'BOM_WHERE_USED', 'READ', 'data-platform-api-bill-of-material-where-used-list-pdf-reads', '30702', 'data-platform-api-bill-of-material-where-used-list-pdf-reads-queue-from');
+('DPFM_API_WORK_CENTER_SRV', 'WORK_CENTER', 'READ', 'data-platform-api-work-center-reads', '30703', 'data-platform-api-work-center-reads-queue-from');
+('DPFM_API_WORK_CENTER_SRV', 'WORK_CENTER', 'CREATE', 'data-platform-api-work-center-creates', '30704', 'data-platform-api-work-center-creates-queue-from');
+('DPFM_API_WORK_CENTER_SRV', 'WORK_CENTER', 'UPDATE', 'data-platform-api-work-center-updates', '30705', 'data-platform-api-work-center-updates-queue-from');
+('DPFM_API_WORK_CENTER_SRV', 'WORK_CENTER', 'EXCONF', 'data-platform-api-work-center-exconf', '30706', 'data-platform-api-work-center-exconf-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'READ', 'data-platform-api-production-routing-reads', '30707', 'data-platform-api-production-routing-reads-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'CREATE', 'data-platform-api-production-routing-creates', '30708', 'data-platform-api-production-routing-creates-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'UPDATE', 'data-platform-api-production-routing-updates', '30709', 'data-platform-api-production-routing-updates-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'CREATE', 'data-platform-api-production-routing-pdf-creates', '30710', 'data-platform-api-production-routing-pdf-creates-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'UPDATE', 'data-platform-api-production-routing-pdf-updates', '30711', 'data-platform-api-production-routing-pdf-updates-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'DETELE', 'data-platform-api-production-routing-pdf-deletes', '30712', 'data-platform-api-production-routing-pdf-deletes-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'CANCEL', 'data-platform-api-production-routing-pdf-cancels', '30713', 'data-platform-api-production-routing-pdf-cancels-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'READ', 'data-platform-api-production-routing-pdf-reads', '30714', 'data-platform-api-production-routing-pdf-reads-queue-from');
+('DPFM_API_PRODUCTION_ROUTING_SRV', 'PRODUCTION_ROUTING', 'EXCONF', 'data-platform-api-production-routing-exconf', '30715', 'data-platform-api-production-routing-exconf-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'READ', 'data-platform-api-production-order-reads', '30716', 'data-platform-api-production-order-reads-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'CREATE', 'data-platform-api-production-order-creates', '30717', 'data-platform-api-production-order-creates-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'UPDATE', 'data-platform-api-production-order-updates', '30718', 'data-platform-api-production-order-updates-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'EXCONF', 'data-platform-api-production-order-exconf', '30719', 'data-platform-api-production-order-exconf-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'CREATE', 'data-platform-api-production-order-pdf-creates', '30720', 'data-platform-api-production-order-pdf-creates-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'UPDATE', 'data-platform-api-production-order-pdf-updates', '30721', 'data-platform-api-production-order-pdf-updates-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'DETELE', 'data-platform-api-production-order-pdf-deletes', '30722', 'data-platform-api-production-order-pdf-deletes-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'CANCEL', 'data-platform-api-production-order-pdf-cancels', '30723', 'data-platform-api-production-order-pdf-cancels-queue-from');
+('DPFM_API_PRODUCTION_ORDER_SRV', 'PRODUCTION_ORDER', 'READ', 'data-platform-api-production-order-pdf-reads', '30724', 'data-platform-api-production-order-pdf-reads-queue-from');
+('DPFM_API_PROCESS_ORDER_SRV', 'PROCESS_ORDER', 'READ', 'data-platform-api-process-order-reads', '30725', 'data-platform-api-process-order-reads-queue-from');
+('DPFM_API_PROCESS_ORDER_SRV', 'PROCESS_ORDER', 'CREATE', 'data-platform-api-process-order-creates', '30726', 'data-platform-api-process-order-creates-queue-from');
+('DPFM_API_PROCESS_ORDER_SRV', 'PROCESS_ORDER', 'UPDATE', 'data-platform-api-process-order-updates', '30727', 'data-platform-api-process-order-updates-queue-from');
+('DPFM_API_PROCESS_ORDER_SRV', 'PROCESS_ORDER', 'EXCONF', 'data-platform-api-process-order-exconf', '30728', 'data-platform-api-process-order-exconf-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'READ', 'data-platform-api-master-recipe-reads', '30729', 'data-platform-api-master-recipe-reads-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'CREATE', 'data-platform-api-master-recipe-creates', '30730', 'data-platform-api-master-recipe-creates-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'UPDATE', 'data-platform-api-master-recipe-updates', '30731', 'data-platform-api-master-recipe-updates-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'CREATE', 'data-platform-api-master-recipe-pdf-creates', '30732', 'data-platform-api-master-recipe-pdf-creates-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'UPDATE', 'data-platform-api-master-recipe-pdf-updates', '30733', 'data-platform-api-master-recipe-pdf-updates-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'DETELE', 'data-platform-api-master-recipe-pdf-deletes', '30734', 'data-platform-api-master-recipe-pdf-deletes-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'CANCEL', 'data-platform-api-master-recipe-pdf-cancels', '30735', 'data-platform-api-master-recipe-pdf-cancels-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'READ', 'data-platform-api-master-recipe-pdf-reads', '30736', 'data-platform-api-master-recipe-pdf-reads-queue-from');
+('DPFM_API_MASTER_RECIPE', 'MASTER_RECIPE', 'EXCONF', 'data-platform-api-master-recipe-exconf', '30737', 'data-platform-api-master-recipe-exconf-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'READ', 'data-platform-api-quotations-reads', '30738', 'data-platform-api-quotations-reads-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'CREATE', 'data-platform-api-quotations-creates', '30739', 'data-platform-api-quotations-creates-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'UPDATE', 'data-platform-api-quotations-updates', '30740', 'data-platform-api-quotations-updates-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'CREATE', 'data-platform-api-quotations-pdf-creates', '30741', 'data-platform-api-quotations-pdf-creates-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'UPDATE', 'data-platform-api-quotations-pdf-updates', '30742', 'data-platform-api-quotations-pdf-updates-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'DETELE', 'data-platform-api-quotations-pdf-deletes', '30743', 'data-platform-api-quotations-pdf-deletes-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'CANCEL', 'data-platform-api-quotations-pdf-cancels', '30744', 'data-platform-api-quotations-pdf-cancels-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'READ', 'data-platform-api-quotations-pdf-reads', '30745', 'data-platform-api-quotations-pdf-reads-queue-from');
+('DPFM_API_QUOTATIONS_SRV', 'QUOTATIONS', 'EXCONF', 'data-platform-api-quotations-exconf', '30746', 'data-platform-api-quotations-exconf-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'READ', 'data-platform-api-orders-reads', '30747', 'data-platform-api-orders-reads-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'CREATE', 'data-platform-api-orders-creates', '30748', 'data-platform-api-orders-creates-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'UPDATE', 'data-platform-api-orders-updates', '30749', 'data-platform-api-orders-updates-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'CREATE', 'data-platform-api-orders-creates-pdf', '30750', 'data-platform-api-orders-creates-pdf-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'UPDATE', 'data-platform-api-orders-updates-pdf', '30751', 'data-platform-api-orders-updates-pdf-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'DETELE', 'data-platform-api-orders-deletes-pdf', '30752', 'data-platform-api-orders-deletes-pdf-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'CANCEL', 'data-platform-api-orders-pdf-cancels', '30753', 'data-platform-api-orders-pdf-cancels-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'READ', 'data-platform-api-orders-pdf-reads', '30754', 'data-platform-api-orders-pdf-reads-queue-from');
+('DPFM_API_ORDERS_SRV', 'ORDERS', 'EXCONF', 'data-platform-api-orders-exconf', '30755', 'data-platform-api-orders-exconf-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'READ', 'data-platform-api-delivery-document-reads', '30756', 'data-platform-api-delivery-document-reads-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'CREATE', 'data-platform-api-delivery-document-creates', '30757', 'data-platform-api-delivery-document-creates-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'UPDATE', 'data-platform-api-delivery-document-updates', '30758', 'data-platform-api-delivery-document-updates-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'CREATE', 'data-platform-api-delivery-document-pdf-creates', '30759', 'data-platform-api-delivery-document-pdf-creates-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'UPDATE', 'data-platform-api-delivery-document-pdf-updates', '30760', 'data-platform-api-delivery-document-pdf-updates-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'DETELE', 'data-platform-api-delivery-document-pdf-deletes', '30761', 'data-platform-api-delivery-document-pdf-deletes-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'CANCEL', 'data-platform-api-delivery-document-pdf-cancels', '30762', 'data-platform-api-delivery-document-pdf-cancels-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'READ', 'data-platform-api-delivery-document-pdf-reads', '30763', 'data-platform-api-delivery-document-pdf-reads-queue-from');
+('DPFM_API_DELIVERY_DOCUMENT_SRV', 'DELIVERY_DOCUMENT', 'EXCONF', 'data-platform-api-delivery-document-exconf', '30764', 'data-platform-api-delivery-document-exconf-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'READ', 'data-platform-api-invoice-document-reads', '30765', 'data-platform-api-invoice-document-reads-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'CREATE', 'data-platform-api-invoice-document-creates', '30766', 'data-platform-api-invoice-document-creates-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'UPDATE', 'data-platform-api-invoice-document-updates', '30767', 'data-platform-api-invoice-document-updates-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'CREATE', 'data-platform-api-invoice-document-pdf-creates', '30768', 'data-platform-api-invoice-document-pdf-creates-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'UPDATE', 'data-platform-api-invoice-document-pdf-updates', '30769', 'data-platform-api-invoice-document-pdf-updates-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'DETELE', 'data-platform-api-invoice-document-pdf-deletes', '30770', 'data-platform-api-invoice-document-pdf-deletes-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'CANCEL', 'data-platform-api-invoice-document-pdf-cancels', '30771', 'data-platform-api-invoice-document-pdf-cancels-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'READ', 'data-platform-api-invoice-document-pdf-reads', '30772', 'data-platform-api-invoice-document-pdf-reads-queue-from');
+('DPFM_API_INVOICE_DOCUMENT_SRV', 'INVOICE_DOCUMENT', 'EXCONF', 'data-platform-api-invoice-document-exconf', '30773', 'data-platform-api-invoice-document-exconf-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'READ', 'data-platform-api-invoice-document-reads', '30774', 'data-platform-api-invoice-document-reads-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'CREATE', 'data-platform-api-invoice-document-creates', '30775', 'data-platform-api-invoice-document-creates-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'UPDATE', 'data-platform-api-invoice-document-updates', '30776', 'data-platform-api-invoice-document-updates-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'CREATE', 'data-platform-api-invoice-confirmation-pdf-creates', '30777', 'data-platform-api-invoice-confirmation-pdf-creates-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'UPDATE', 'data-platform-api-invoice-confirmation-pdf-updates', '30778', 'data-platform-api-invoice-confirmation-pdf-updates-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'DETELE', 'data-platform-api-invoice-confirmation-pdf-deletes', '30779', 'data-platform-api-invoice-confirmation-pdf-deletes-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'CANCEL', 'data-platform-api-invoice-confirmation-pdf-cancels', '30780', 'data-platform-api-invoice-confirmation-pdf-cancels-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'READ', 'data-platform-api-invoice-confirmation-pdf-reads', '30781', 'data-platform-api-invoice-confirmation-pdf-reads-queue-from');
+('DPFM_API_INVOICE_CONFIRMATION_SRV', 'INVOICE_CONFIRMATION', 'EXCONF', 'data-platform-api-invoice-confirmation-exconf', '30782', 'data-platform-api-invoice-confirmation-exconf-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'READ', 'data-platform-api-customer-product-reads', '30783', 'data-platform-api-customer-product-reads-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'CREATE', 'data-platform-api-customer-product-creates', '30784', 'data-platform-api-customer-product-creates-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'UPDATE', 'data-platform-api-customer-product-updates', '30785', 'data-platform-api-customer-product-updates-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'CREATE', 'data-platform-api-customer-product-pdf-creates', '30786', 'data-platform-api-customer-product-pdf-creates-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'UPDATE', 'data-platform-api-customer-product-pdf-updates', '30787', 'data-platform-api-customer-product-pdf-updates-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'DETELE', 'data-platform-api-customer-product-pdf-deletes', '30788', 'data-platform-api-customer-product-pdf-deletes-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'CANCEL', 'data-platform-api-customer-product-pdf-cancels', '30789', 'data-platform-api-customer-product-pdf-cancels-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'READ', 'data-platform-api-customer-product-pdf-reads', '30790', 'data-platform-api-customer-product-pdf-reads-queue-from');
+('DPFM_API_CUSTOMER_PRODUCT_SRV', 'CUSTOMER_PRODUCT', 'EXCONF', 'data-platform-api-customer-product-exconf', '30791', 'data-platform-api-customer-product-exconf-queue-from');
+('DPFM_API_DISTRICT_SRV', 'data_platform_api_district_reads', 'READ', 'under dev.', '30792', 'under dev.-queue-from');
+('DPFM_API_DISTRICT_SRV', 'data_platform_api_district_creates', 'CREATE', 'under dev.', '30793', 'under dev.-queue-from');
+('DPFM_API_DISTRICT_SRV', 'data_platform_api_district_updates', 'UPDATE', 'under dev.', '30794', 'under dev.-queue-from');
+('DPFM_API_DISTRICT_SRV', 'data_platform_api_district_exconf', 'EXCONF', 'under dev.', '30795', 'under dev.-queue-from');
+('DPFM_INCOTERMS_SRV', 'INCOTERMS', 'READ', 'data-platform-api-incoterms-reads', '30796', 'data-platform-api-incoterms-reads-queue-from');
+('DPFM_INCOTERMS_SRV', 'INCOTERMS', 'CREATE', 'data-platform-api-incoterms-creates', '30797', 'data-platform-api-incoterms-creates-queue-from');
+('DPFM_INCOTERMS_SRV', 'INCOTERMS', 'UPDATE', 'data-platform-api-incoterms-updates', '30798', 'data-platform-api-incoterms-updates-queue-from');
+('DPFM_INCOTERMS_SRV', 'INCOTERMS', 'EXCONF', 'data-platform-api-incoterms-exconf', '30799', 'data-platform-api-incoterms-exconf-queue-from');
+('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'PURCHASING_INFO_RECORD', 'READ', 'data-platform-api-purchasing-info-record-reads', '30800', 'data-platform-api-purchasing-info-record-reads-queue-from');
+('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'PURCHASING_INFO_RECORD', 'CREATE', 'data-platform-api-purchasing-info-record-creates', '30801', 'data-platform-api-purchasing-info-record-creates-queue-from');
+('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'PURCHASING_INFO_RECORD', 'UPDATE', 'data-platform-api-purchasing-info-record-updates', '30802', 'data-platform-api-purchasing-info-record-updates-queue-from');
+('DPFM_API_PURCHASING_INFO_RECORD_SRV', 'PURCHASING_INFO_RECORD', 'EXCONF', 'data-platform-api-purchasing-info-record-exconf', '30803', 'data-platform-api-purchasing-info-record-exconf-queue-from');
+('DPFM_API_PURCHASE_REQUISITION_SRV', 'PURCHASE_REQUISITION', 'READ', 'data-platform-api-purchase-requisition-reads', '30804', 'data-platform-api-purchase-requisition-reads-queue-from');
+('DPFM_API_PURCHASE_REQUISITION_SRV', 'PURCHASE_REQUISITION', 'CREATE', 'data-platform-api-purchase-requisition-creates', '30805', 'data-platform-api-purchase-requisition-creates-queue-from');
+('DPFM_API_PURCHASE_REQUISITION_SRV', 'PURCHASE_REQUISITION', 'UPDATE', 'data-platform-api-purchase-requisition-updates', '30806', 'data-platform-api-purchase-requisition-updates-queue-from');
+('DPFM_API_PURCHASE_REQUISITION_SRV', 'PURCHASE_REQUISITION', 'EXCONF', 'data-platform-api-purchase-requisition-exconf', '30807', 'data-platform-api-purchase-requisition-exconf-queue-from');
+('DPFM_API_HOUSE_BANK_SRV', 'HOUSE_BANK', 'READ', 'data-platform-api-house-bank-reads', '30808', 'data-platform-api-house-bank-reads-queue-from');
+('DPFM_API_HOUSE_BANK_SRV', 'HOUSE_BANK', 'CREATE', 'data-platform-api-house-bank-creates', '30809', 'data-platform-api-house-bank-creates-queue-from');
+('DPFM_API_HOUSE_BANK_SRV', 'HOUSE_BANK', 'UPDATE', 'data-platform-api-house-bank-updates', '30810', 'data-platform-api-house-bank-updates-queue-from');
+('DPFM_API_HOUSE_BANK_SRV', 'HOUSE_BANK', 'EXCONF', 'data-platform-api-house-bank-exconf', '30811', 'data-platform-api-house-bank-exconf-queue-from');
+('DPFM_API_PAYMENT_METHOD_SRV', 'PAYMENT_METHOD', 'READ', 'data-platform-api-payment-method-reads', '30812', 'data-platform-api-payment-method-reads-queue-from');
+('DPFM_API_PAYMENT_METHOD_SRV', 'PAYMENT_METHOD', 'CREATE', 'data-platform-api-payment-method-creates', '30813', 'data-platform-api-payment-method-creates-queue-from');
+('DPFM_API_PAYMENT_METHOD_SRV', 'PAYMENT_METHOD', 'UPDATE', 'data-platform-api-payment-method-updates', '30814', 'data-platform-api-payment-method-updates-queue-from');
+('DPFM_API_PAYMENT_METHOD_SRV', 'PAYMENT_METHOD', 'EXCONF', 'data-platform-api-payment-method-exconf', '30815', 'data-platform-api-payment-method-exconf-queue-from');
+('DPFM_API_PAYMENT_TERM_SRV', 'PAYMENT_TERM', 'READ', 'data-platform-api-payment-terms-reads', '30816', 'data-platform-api-payment-terms-reads-queue-from');
+('DPFM_API_PAYMENT_TERM_SRV', 'PAYMENT_TERM', 'CREATE', 'data-platform-api-payment-terms-creates', '30817', 'data-platform-api-payment-terms-creates-queue-from');
+('DPFM_API_PAYMENT_TERM_SRV', 'PAYMENT_TERM', 'UPDATE', 'data-platform-api-payment-terms-updates', '30818', 'data-platform-api-payment-terms-updates-queue-from');
+('DPFM_API_PAYMENT_TERM_SRV', 'PAYMENT_TERM', 'EXCONF', 'data-platform-api-sales-payment-terms-exconf', '30819', 'data-platform-api-sales-payment-terms-exconf-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'READ', 'data-platform-api-payment-requisition-reads', '30820', 'data-platform-api-payment-requisition-reads-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'CREATE', 'data-platform-api-payment-requisition-creates', '30821', 'data-platform-api-payment-requisition-creates-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'UPDATE', 'data-platform-api-payment-requisition-updates', '30822', 'data-platform-api-payment-requisition-updates-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'CREATE', 'data-platform-api-payment-requisition-pdf-creates', '30823', 'data-platform-api-payment-requisition-pdf-creates-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'UPDATE', 'data-platform-api-payment-requisition-pdf-updates', '30824', 'data-platform-api-payment-requisition-pdf-updates-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'DETELE', 'data-platform-api-payment-requisition-pdf-deletes', '30825', 'data-platform-api-payment-requisition-pdf-deletes-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'CANCEL', 'data-platform-api-payment-requisition-pdf-cancels', '30826', 'data-platform-api-payment-requisition-pdf-cancels-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'READ', 'data-platform-api-payment-requisition-pdf-reads', '30827', 'data-platform-api-payment-requisition-pdf-reads-queue-from');
+('DPFM_API_PAYMENT_REQUISITION_SRV', 'PAYMENT_REQUISITION', 'EXCONF', 'data-platform-api-payment-requisition-exconf', '30828', 'data-platform-api-payment-requisition-exconf-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'READ', 'data-platform-api-bank-statement-reads', '30829', 'data-platform-api-bank-statement-reads-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'CREATE', 'data-platform-api-bank-statement-creates', '30830', 'data-platform-api-bank-statement-creates-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'UPDATE', 'data-platform-api-bank-statement-updates', '30831', 'data-platform-api-bank-statement-updates-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'CREATE', 'data-platform-api-bank-statement-pdf-creates', '30832', 'data-platform-api-bank-statement-pdf-creates-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'UPDATE', 'data-platform-api-bank-statement-pdf-updates', '30833', 'data-platform-api-bank-statement-pdf-updates-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'DETELE', 'data-platform-api-bank-statement-pdf-deletes', '30834', 'data-platform-api-bank-statement-pdf-deletes-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'CANCEL', 'data-platform-api-bank-statement-pdf-cancels', '30835', 'data-platform-api-bank-statement-pdf-cancels-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'READ', 'data-platform-api-bank-statement-pdf-reads', '30836', 'data-platform-api-bank-statement-pdf-reads-queue-from');
+('DPFM_API_BANK_STATEMENT_SRV', 'BANK_STATEMENT', 'EXCONF', 'data-platform-api-bank-statement-exconf', '30837', 'data-platform-api-bank-statement-exconf-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'READ', 'data-platform-api-accounting-document-reads', '30838', 'data-platform-api-accounting-document-reads-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'CREATE', 'data-platform-api-accounting-document-creates', '30839', 'data-platform-api-accounting-document-creates-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'UPDATE', 'data-platform-api-accounting-document-updates', '30840', 'data-platform-api-accounting-document-updates-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'CREATE', 'data-platform-api-accounting-document-pdf-creates', '30841', 'data-platform-api-accounting-document-pdf-creates-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'UPDATE', 'data-platform-api-accounting-document-pdf-updates', '30842', 'data-platform-api-accounting-document-pdf-updates-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'DETELE', 'data-platform-api-accounting-document-pdf-deletes', '30843', 'data-platform-api-accounting-document-pdf-deletes-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'CANCEL', 'data-platform-api-accounting-document-pdf-cancels', '30844', 'data-platform-api-accounting-document-pdf-cancels-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'READ', 'data-platform-api-accounting-document-pdf-reads', '30845', 'data-platform-api-accounting-document-pdf-reads-queue-from');
+('DPFM_API_ACCOUNTING_DOCUMENT_SRV', 'ACCOUNTING_DOCUMENT', 'EXCONF', 'data-platform-api-accounting-document-exconf', '30846', 'data-platform-api-accounting-document-exconf-queue-from');
+('DPFM_API_AR_BALANCE_SRV', 'AR_BALANCE', 'READ', 'data-platform-api-ar-balance-reads', '30847', 'data-platform-api-ar-balance-reads-queue-from');
+('DPFM_API_AR_BALANCE_SRV', 'AR_BALANCE', 'CREATE', 'data-platform-api-ar-balance-creates', '30848', 'data-platform-api-ar-balance-creates-queue-from');
+('DPFM_API_AR_BALANCE_SRV', 'AR_BALANCE', 'UPDATE', 'data-platform-api-ar-balance-updates', '30849', 'data-platform-api-ar-balance-updates-queue-from');
+('DPFM_API_AR_BALANCE_SRV', 'AR_BALANCE', 'CREATE', 'data-platform-api-ar-balance-pdf-creates', '30850', 'data-platform-api-ar-balance-pdf-creates-queue-from');
+('DPFM_API_AR_BALANCE_SRV', 'AR_BALANCE', 'UPDATE', 'data-platform-api-ar-balance-pdf-updates', '30851', 'data-platform-api-ar-balance-pdf-updates-queue-from');
+('DPFM_API_AR_BALANCE_SRV', 'AR_BALANCE', 'DETELE', 'data-platform-api-ar-balance-pdf-deletes', '30852', 'data-platform-api-ar-balance-pdf-deletes-queue-from');
+('DPFM_API_AR_BALANCE_SRV', 'AR_BALANCE', 'READ', 'data-platform-api-ar-balance-pdf-reads', '30853', 'data-platform-api-ar-balance-pdf-reads-queue-from');
+('DPFM_API_AP_BALANCE_SRV', 'AP_BALANCE', 'READ', 'data-platform-api-ap-balance-reads', '30854', 'data-platform-api-ap-balance-reads-queue-from');
+('DPFM_API_AP_BALANCE_SRV', 'AP_BALANCE', 'CREATE', 'data-platform-api-ap-balance-creates', '30855', 'data-platform-api-ap-balance-creates-queue-from');
+('DPFM_API_AP_BALANCE_SRV', 'AP_BALANCE', 'UPDATE', 'data-platform-api-ap-balance-updates', '30856', 'data-platform-api-ap-balance-updates-queue-from');
+('DPFM_API_AP_BALANCE_SRV', 'AP_BALANCE', 'CREATE', 'data-platform-api-ap-balance-pdf-creates', '30857', 'data-platform-api-ap-balance-pdf-creates-queue-from');
+('DPFM_API_AP_BALANCE_SRV', 'AP_BALANCE', 'UPDATE', 'data-platform-api-ap-balance-pdf-updates', '30858', 'data-platform-api-ap-balance-pdf-updates-queue-from');
+('DPFM_API_AP_BALANCE_SRV', 'AP_BALANCE', 'DETELE', 'data-platform-api-ap-balance-pdf-deletes', '30859', 'data-platform-api-ap-balance-pdf-deletes-queue-from');
+('DPFM_API_AP_BALANCE_SRV', 'AP_BALANCE', 'READ', 'data-platform-api-ap-balance-pdf-reads', '30860', 'data-platform-api-ap-balance-pdf-reads-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'READ', 'data-platform-api-trial-balance-reads', '30861', 'data-platform-api-trial-balance-reads-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'CREATE', 'data-platform-api-trial-balance-creates', '30862', 'data-platform-api-trial-balance-creates-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'UPDATE', 'data-platform-api-trial-balance-updates', '30863', 'data-platform-api-trial-balance-updates-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'CREATE', 'data-platform-api-trial-balance-pdf-creates', '30864', 'data-platform-api-trial-balance-pdf-creates-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'UPDATE', 'data-platform-api-trial-balance-pdf-updates', '30865', 'data-platform-api-trial-balance-pdf-updates-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'DETELE', 'data-platform-api-trial-balance-pdf-deletes', '30866', 'data-platform-api-trial-balance-pdf-deletes-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'READ', 'data-platform-api-trial-balance-pdf-reads', '30867', 'data-platform-api-trial-balance-pdf-reads-queue-from');
+('DPFM_API_TRIAL_BALANCE_SRV', 'TRIAL_BALANCE', 'EXCONF', 'data-platform-api-trial-balance-exconf', '30868', 'data-platform-api-trial-balance-exconf-queue-from');
+('DPFM_API_BALANCE_SHEET_SRV', 'BALANCE_SHEET', 'READ', 'data-platform-api-balance-sheet-reads', '30869', 'data-platform-api-balance-sheet-reads-queue-from');
+('DPFM_API_BALANCE_SHEET_SRV', 'BALANCE_SHEET', 'CREATE', 'data-platform-api-balance-sheet-creates', '30870', 'data-platform-api-balance-sheet-creates-queue-from');
+('DPFM_API_BALANCE_SHEET_SRV', 'BALANCE_SHEET', 'UPDATE', 'data-platform-api-balance-sheet-updates', '30871', 'data-platform-api-balance-sheet-updates-queue-from');
+('DPFM_API_BALANCE_SHEET_SRV', 'BALANCE_SHEET', 'CREATE', 'data-platform-api-balance-sheet-pdf-creates', '30872', 'data-platform-api-balance-sheet-pdf-creates-queue-from');
+('DPFM_API_BALANCE_SHEET_SRV', 'BALANCE_SHEET', 'UPDATE', 'data-platform-api-balance-sheet-pdf-updates', '30873', 'data-platform-api-balance-sheet-pdf-updates-queue-from');
+('DPFM_API_BALANCE_SHEET_SRV', 'BALANCE_SHEET', 'DETELE', 'data-platform-api-balance-sheet-pdf-deletes', '30874', 'data-platform-api-balance-sheet-pdf-deletes-queue-from');
+('DPFM_API_BALANCE_SHEET_SRV', 'BALANCE_SHEET', 'READ', 'data-platform-api-balance-sheet-pdf-reads', '30875', 'data-platform-api-balance-sheet-pdf-reads-queue-from');
+('DPFM_API_PROFIT_LOSS_SRV', 'PROFIT_LOSS', 'READ', 'data-platform-api-profit-loss-reads', '30876', 'data-platform-api-profit-loss-reads-queue-from');
+('DPFM_API_PROFIT_LOSS_SRV', 'PROFIT_LOSS', 'CREATE', 'data-platform-api-profit-loss-creates', '30877', 'data-platform-api-profit-loss-creates-queue-from');
+('DPFM_API_PROFIT_LOSS_SRV', 'PROFIT_LOSS', 'UPDATE', 'data-platform-api-profit-loss-updates', '30878', 'data-platform-api-profit-loss-updates-queue-from');
+('DPFM_API_PROFIT_LOSS_SRV', 'PROFIT_LOSS', 'CREATE', 'data-platform-api-profit-loss-pdf-creates', '30879', 'data-platform-api-profit-loss-pdf-creates-queue-from');
+('DPFM_API_PROFIT_LOSS_SRV', 'PROFIT_LOSS', 'UPDATE', 'data-platform-api-profit-loss-pdf-updates', '30880', 'data-platform-api-profit-loss-pdf-updates-queue-from');
+('DPFM_API_PROFIT_LOSS_SRV', 'PROFIT_LOSS', 'DETELE', 'data-platform-api-profit-loss-pdf-deletes', '30881', 'data-platform-api-profit-loss-pdf-deletes-queue-from');
+('DPFM_API_PROFIT_LOSS_SRV', 'PROFIT_LOSS', 'READ', 'data-platform-api-profit-loss-pdf-reads', '30882', 'data-platform-api-profit-loss-pdf-reads-queue-from');
+('DPFM_API_SALES_REPORT_SRV', 'SALES_REPORT', 'READ', 'data-platform-api-sales-report-reads', '30883', 'data-platform-api-sales-report-reads-queue-from');
+('DPFM_API_SALES_REPORT_SRV', 'SALES_REPORT', 'CREATE', 'data-platform-api-sales-report-creates', '30884', 'data-platform-api-sales-report-creates-queue-from');
+('DPFM_API_SALES_REPORT_SRV', 'SALES_REPORT', 'UPDATE', 'data-platform-api-sales-report-updates', '30885', 'data-platform-api-sales-report-updates-queue-from');
+('DPFM_API_SALES_REPORT_SRV', 'SALES_REPORT', 'CREATE', 'data-platform-api-sales-report-pdf-creates', '30886', 'data-platform-api-sales-report-pdf-creates-queue-from');
+('DPFM_API_SALES_REPORT_SRV', 'SALES_REPORT', 'UPDATE', 'data-platform-api-sales-report-pdf-updates', '30887', 'data-platform-api-sales-report-pdf-updates-queue-from');
+('DPFM_API_SALES_REPORT_SRV', 'SALES_REPORT', 'DETELE', 'data-platform-api-sales-report-pdf-deletes', '30888', 'data-platform-api-sales-report-pdf-deletes-queue-from');
+('DPFM_API_SALES_REPORT_SRV', 'SALES_REPORT', 'READ', 'data-platform-api-sales-report-pdf-reads', '30889', 'data-platform-api-sales-report-pdf-reads-queue-from');
+('DPFM_API_PAYMENT_REPORT_SRV', 'PAYMENT_REPORT', 'READ', 'data-platform-api-payment-report-reads', '30890', 'data-platform-api-payment-report-reads-queue-from');
+('DPFM_API_PAYMENT_REPORT_SRV', 'PAYMENT_REPORT', 'CREATE', 'data-platform-api-payment-report-creates', '30891', 'data-platform-api-payment-report-creates-queue-from');
+('DPFM_API_PAYMENT_REPORT_SRV', 'PAYMENT_REPORT', 'UPDATE', 'data-platform-api-payment-report-updates', '30892', 'data-platform-api-payment-report-updates-queue-from');
+('DPFM_API_PAYMENT_REPORT_SRV', 'PAYMENT_REPORT', 'CREATE', 'data-platform-api-payment-report-pdf-creates', '30893', 'data-platform-api-payment-report-pdf-creates-queue-from');
+('DPFM_API_PAYMENT_REPORT_SRV', 'PAYMENT_REPORT', 'UPDATE', 'data-platform-api-payment-report-pdf-updates', '30894', 'data-platform-api-payment-report-pdf-updates-queue-from');
+('DPFM_API_PAYMENT_REPORT_SRV', 'PAYMENT_REPORT', 'DETELE', 'data-platform-api-payment-report-pdf-deletes', '30895', 'data-platform-api-payment-report-pdf-deletes-queue-from');
+('DPFM_API_PAYMENT_REPORT_SRV', 'PAYMENT_REPORT', 'READ', 'data-platform-api-payment-report-pdf-reads', '30896', 'data-platform-api-payment-report-pdf-reads-queue-from');
+('DPFM_API_PROJECT_SRV', 'PROJECT', 'READ', 'data-platform-api-payment-report-reads', '30897', 'data-platform-api-payment-report-reads-queue-from');
+('DPFM_API_PROJECT_SRV', 'PROJECT', 'CREATE', 'data-platform-api-payment-report-creates', '30898', 'data-platform-api-payment-report-creates-queue-from');
+('DPFM_API_PROJECT_SRV', 'PROJECT', 'UPDATE', 'data-platform-api-payment-report-updates', '30899', 'data-platform-api-payment-report-updates-queue-from');
+('DPFM_API_PROJECT_SRV', 'PROJECT', 'EXCONF', 'data-platform-api-payment-report-exconf', '30900', 'data-platform-api-payment-report-exconf-queue-from');
+('DPFM_FUNCTION_PRODUCT_INVENTORY_UPDATES_SRV', 'FUNCTION_PRODUCT_INVENTORY_UPDATES', 'FUNCTION', 'data-platform-function-product-inventory-updates', '30901', 'data-platform-function-product-inventory-updates-queue-from');
+('DPFM_FUNCTION_PRODUCT_AVAILABILITY_CALCULATION_SRV', 'FUNCTION_PRODUCT_AVAILABILITY_CALCULATION', 'FUNCTION', 'data-platform-function-product-availability-calculation', '30902', 'data-platform-function-product-availability-calculation-queue-from');
+('DPFM_FUNCTION_PRODUCT_AVAILABILITY_CHECK_SRV', 'FUNCTION_PRODUCT_AVAILABILITY_CHECK', 'FUNCTION', 'data-platform-function-product-availability-check', '30903', 'data-platform-function-product-availability-check-queue-from');
+('DPFM_FUNCTION_QUANTITY_UNIT_CONVIRSION_SRV', 'FUNCTION_QUANTITY_UNIT_CONVIRSION', 'FUNCTION', 'data-platform-function-quantity-unit-convirsion', '30904', 'data-platform-function-quantity-unit-convirsion-queue-from');
+('DPFM_FUNCTION_QUOTATIONS_SRV', 'FUNCTION_QUOTATIONS', 'FUNCTION', 'data-platform-function-orders-convert-pr-to-pq', '30905', 'data-platform-function-orders-convert-pr-to-pq-queue-from');
+('DPFM_FUNCTION_QUOTATIONS_SRV', 'FUNCTION_QUOTATIONS', 'FUNCTION', 'data-platform-function-quotations-creates-subfunc', '30906', 'data-platform-function-quotations-creates-subfunc-queue-from');
+('DPFM_FUNCTION_ORDERS_SRV', 'FUNCTION_ORDERS', 'FUNCTION', 'data-platform-function-orders-creates-pr-ref', '30907', 'data-platform-function-orders-creates-pr-ref-queue-from');
+('DPFM_FUNCTION_ORDERS_SRV', 'FUNCTION_ORDERS', 'FUNCTION', 'data-platform-function-orders-creates-qt-ref', '30908', 'data-platform-function-orders-creates-qt-ref-queue-from');
+('DPFM_FUNCTION_ORDERS_SRV', 'FUNCTION_ORDERS', 'FUNCTION', 'data-platform-function-orders-creates-subfunc', '30909', 'data-platform-function-orders-creates-subfunc-queue-from');
+('DPFM_FUNCTION_ORDERS_SRV', 'FUNCTION_ORDERS', 'FUNCTION', 'data-platform-function-orders-updates-subfunc-batch-processing', '30909', 'data-platform-function-orders-updates-subfunc-batch-processing-queue-from');
+('DPFM_FUNCTION_DELIVERY_DOCUMENT_SRV', 'FUNCTION_DELIVERY_DOCUMENT', 'FUNCTION', 'data-platform-function-delivery-document-creates-od-ref', '30910', 'data-platform-function-delivery-document-creates-od-ref-queue-from');
+('DPFM_FUNCTION_DELIVERY_DOCUMENT_SRV', 'FUNCTION_DELIVERY_DOCUMENT', 'FUNCTION', 'data-platform-function-delivery-document-creates-batch', '30911', 'data-platform-function-delivery-document-creates-batch-queue-from');
+('DPFM_FUNCTION_DELIVERY_DOCUMENT_SRV', 'FUNCTION_DELIVERY_DOCUMENT', 'FUNCTION', 'data-platform-function-delivery-document-creates-subfunc', '30912', 'data-platform-function-delivery-document-creates-subfunc-queue-from');
+('DPFM_FUNCTION_DELIVERY_DOCUMENT_SRV', 'FUNCTION_DELIVERY_DOCUMENT', 'FUNCTION', 'data-platform-function-delivery-document-updates-subfunc-batch-processing', '30912', 'data-platform-function-delivery-document-updates-subfunc-batch-processing-queue-from');
+('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION_INVOICE_DOCUMENT', 'FUNCTION', 'data-platform-function-invoice-document-creates-od-ref', '30913', 'data-platform-function-invoice-document-creates-od-ref-queue-from');
+('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION_INVOICE_DOCUMENT', 'FUNCTION', 'data-platform-function-invoice-document-creates-dl-ref', '30914', 'data-platform-function-invoice-document-creates-dl-ref-queue-from');
+('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION_INVOICE_DOCUMENT', 'FUNCTION', 'data-platform-function-invoice-document-creates-batch', '30915', 'data-platform-function-invoice-document-creates-batch-queue-from');
+('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION_INVOICE_DOCUMENT', 'FUNCTION', 'data-platform-function-invoice-document-creates-subfunc', '30916', 'data-platform-function-invoice-document-creates-subfunc-queue-from');
+('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION_INVOICE_DOCUMENT', 'FUNCTION', 'data-platform-function-invoice-document-creates-convert-dpfm-to-peppol', '30917', 'data-platform-function-invoice-document-creates-convert-dpfm-to-peppol-queue-from');
+('DPFM_FUNCTION_INVOICE_DOCUMENT_SRV', 'FUNCTION_INVOICE_DOCUMENT', 'FUNCTION', 'data-platform-function-invoice-document-creates-convert-dpfm-to-jp-pint', '30918', 'data-platform-function-invoice-document-creates-convert-dpfm-to-jp-pint-queue-from');
+('DPFM_FUNCTION_INVOICE_CONFIRMATION_SRV', 'FUNCTION_INVOICE_CONFIRMATION', 'FUNCTION', 'data-platform-function-invoice-document-creates-iv-ref', '30919', 'data-platform-function-invoice-document-creates-iv-ref-queue-from');
+('DPFM_FUNCTION_INVOICE_CONFIRMATION_SRV', 'FUNCTION_INVOICE_CONFIRMATION', 'FUNCTION', 'data-platform-function-invoice-confirmation-creates-subfunc', '30920', 'data-platform-function-invoice-confirmation-creates-subfunc-queue-from');
+('DPFM_FUNCTION_PAYMENT_REQUISITION_SRV', 'FUNCTION_PAYMENT_REQUISITION', 'FUNCTION', 'data-platform-function-payment-requisition-creates-convert-dpfm-to-zedi', '30921', 'data-platform-function-payment-requisition-creates-convert-dpfm-to-zedi-queue-from');
+('DPFM_FUNCTION_BANK_STATEMENT_SRV', 'FUNCTION_BANK_STATEMENT', 'FUNCTION', 'data-platform-function-bank-statement-creates', '30922', 'data-platform-function-bank-statement-creates-queue-from');
 UNLOCK TABLES;
